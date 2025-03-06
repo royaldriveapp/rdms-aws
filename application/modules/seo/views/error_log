@@ -1,0 +1,2 @@
+[16-Feb-2024 02:58:35 UTC] PHP Warning:  file_get_contents(/tmp/index.php): failed to open stream: No such file or directory in /home/royaldrive/public_html/rdms/l.php on line 2
+[16-Feb-2024 02:58:35 UTC] PHP Warning:  file_get_contents(/tmp/.htaccess): failed to open stream: No such file or directory in /home/royaldrive/public_html/rdms/l.php on line 5

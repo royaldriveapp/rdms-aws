@@ -1,0 +1,38 @@
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`);
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` IS NULL;
+SELECT cpnl_register_master.vreg_cust_name, cpnl_register_master.vreg_cust_place, cpnl_register_master.vreg_cust_phone, cpnl_register_master.vreg_customer_remark, cpnl_register_master.vreg_last_action, cpnl_register_master.vreg_added_by, cpnl_register_master.vreg_assigned_to, cpnl_register_master.vreg_inquiry, cpnl_register_master.vreg_id, cpnl_register_master.vreg_added_on, assign.usr_first_name AS assign_usr_first_name, assign.usr_last_name AS assign_usr_last_name, addedby.usr_first_name AS addedby_usr_first_name, addedby.usr_last_name AS addedby_usr_last_name, cpnl_enquiry.enq_current_status
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_users` assign ON `assign`.`usr_id` = `cpnl_register_master`.`vreg_assigned_to`
+LEFT JOIN `cpnl_users` addedby ON `addedby`.`usr_id` = `cpnl_register_master`.`vreg_added_by`
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_register_master`.`vreg_inquiry`
+WHERE `cpnl_register_master`.`vreg_status` IN (0, 1) 
+AND (cpnl_enquiry.enq_current_status NOT IN (4,6,2,5,3,7) OR cpnl_enquiry.enq_current_status IS NULL)
+AND `vreg_assigned_to` =  0
+AND (vreg_is_punched = 0);
+===[took:2.06]===[datetime:: 2024-10-13 03:34:33]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`);
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` IS NULL;
+SELECT cpnl_register_master.vreg_cust_name, cpnl_register_master.vreg_cust_place, cpnl_register_master.vreg_cust_phone, cpnl_register_master.vreg_customer_remark, cpnl_register_master.vreg_last_action, cpnl_register_master.vreg_added_by, cpnl_register_master.vreg_assigned_to, cpnl_register_master.vreg_inquiry, cpnl_register_master.vreg_id, cpnl_register_master.vreg_added_on, assign.usr_first_name AS assign_usr_first_name, assign.usr_last_name AS assign_usr_last_name, addedby.usr_first_name AS addedby_usr_first_name, addedby.usr_last_name AS addedby_usr_last_name, cpnl_enquiry.enq_current_status
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_users` assign ON `assign`.`usr_id` = `cpnl_register_master`.`vreg_assigned_to`
+LEFT JOIN `cpnl_users` addedby ON `addedby`.`usr_id` = `cpnl_register_master`.`vreg_added_by`
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_register_master`.`vreg_inquiry`
+WHERE `cpnl_register_master`.`vreg_status` IN (0, 1) 
+AND (cpnl_enquiry.enq_current_status NOT IN (4,6,2,5,3,7) OR cpnl_enquiry.enq_current_status IS NULL)
+AND `vreg_assigned_to` =  0
+AND (vreg_is_punched = 0);
+===[took:1.83]===[datetime:: 2024-10-13 03:34:43]
+
+
+

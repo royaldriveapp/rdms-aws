@@ -1,0 +1,377 @@
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`);
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` IS NULL;
+SELECT cpnl_register_master.vreg_cust_name, cpnl_register_master.vreg_cust_place, cpnl_register_master.vreg_cust_phone, cpnl_register_master.vreg_customer_remark, cpnl_register_master.vreg_last_action, cpnl_register_master.vreg_added_by, cpnl_register_master.vreg_assigned_to, cpnl_register_master.vreg_inquiry, cpnl_register_master.vreg_id, cpnl_register_master.vreg_added_on, assign.usr_first_name AS assign_usr_first_name, assign.usr_last_name AS assign_usr_last_name, addedby.usr_first_name AS addedby_usr_first_name, addedby.usr_last_name AS addedby_usr_last_name, cpnl_enquiry.enq_current_status
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_users` assign ON `assign`.`usr_id` = `cpnl_register_master`.`vreg_assigned_to`
+LEFT JOIN `cpnl_users` addedby ON `addedby`.`usr_id` = `cpnl_register_master`.`vreg_added_by`
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_register_master`.`vreg_inquiry`
+WHERE `cpnl_register_master`.`vreg_status` IN (0, 1) 
+AND (cpnl_enquiry.enq_current_status NOT IN (4,6,2,5,3,7) OR cpnl_enquiry.enq_current_status IS NULL)
+AND `vreg_assigned_to` =  0
+AND (vreg_is_punched = 0);
+===[took:2.296]===[datetime:: 2024-10-13 22:00:02]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '996';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '996';
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '996';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '996';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_valuation`)
+WHERE (val_status = 39 OR val_status = 28 OR val_status = 13)
+AND `val_booking_status` =  0;
+SELECT COUNT(*) AS enq_total FROM cpnl_enquiry WHERE enq_current_status = 1 AND enq_se_id = 996;
+SELECT COUNT(*) AS enq_total FROM cpnl_enquiry WHERE enq_current_status = 3 AND enq_added_by = 996;
+SELECT COUNT(*) AS enq_total FROM cpnl_enquiry WHERE enq_current_status = 7 AND enq_added_by = 996;
+SELECT COUNT(*) AS enq_total FROM cpnl_enquiry WHERE (enq_se_id != enq_added_by) AND enq_se_id = 996;
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '996';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '996';
+SELECT `cpnl_followup`.`foll_id`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_customer_feedback`, `cpnl_vehicle`.`veh_id`, `cpnl_vehicle`.`veh_brand`, `cpnl_vehicle`.`veh_model`, `cpnl_vehicle`.`veh_varient`, `cpnl_vehicle`.`veh_status`, `cpnl_enquiry`.`enq_cus_name`, `cpnl_enquiry`.`enq_id`, `rana_brand`.`brd_title`, `rana_model`.`mod_title`, `cpnl_enquiry`.`enq_current_status`, `rana_variant`.`var_variant_name`, `cpnl_enquiry`.`enq_cus_status`
+FROM (`cpnl_followup`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_followup`.`foll_cus_id`
+LEFT JOIN `cpnl_vehicle` ON `cpnl_vehicle`.`veh_id` = `cpnl_followup`.`foll_cus_vehicle_id`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_vehicle`.`veh_brand`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_vehicle`.`veh_model`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_vehicle`.`veh_varient`
+WHERE `cpnl_enquiry`.`enq_se_id` = 996
+AND (DATE(cpnl_followup.foll_next_foll_date) = CURDATE() OR DATE(cpnl_followup.foll_next_foll_date) = DATE_ADD(CURDATE(), INTERVAL +1 DAY)) AND cpnl_followup.foll_customer_feedback IS NULL
+AND `cpnl_enquiry`.`enq_current_status` IN (1, 15, 14) ;
+SELECT cpnl_register_master.vreg_cust_phone, cpnl_register_master.vreg_cust_name, cpnl_register_master.vreg_next_followup, TIMESTAMPDIFF(MINUTE, "2024-10-13 22:00", cpnl_register_master.vreg_next_followup ) AS dateDiff, cpnl_register_master.vreg_id, cpnl_users.usr_first_name
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_users` ON `cpnl_register_master`.`vreg_added_by` = `cpnl_users`.`usr_id`
+WHERE `cpnl_register_master`.`vreg_status` IN (0, 1) 
+AND `cpnl_register_master`.`vreg_is_punched` =  0
+AND `cpnl_register_master`.`vreg_next_followup` IS NOT NULL
+AND `cpnl_register_master`.`vreg_assigned_to` =  '996';
+SELECT `cpnl_enquiry`.`enq_cus_name`, `cpnl_enquiry`.`enq_id`, `cpnl_enquiry`.`enq_cus_mobile`, `cpnl_users`.`usr_first_name`, `cpnl_users`.`usr_last_name`, `tbl_added_by`.`usr_username` AS enq_added_by_name
+FROM (`cpnl_enquiry`)
+LEFT JOIN `cpnl_users` ON `cpnl_users`.`usr_id` = `cpnl_enquiry`.`enq_se_id`
+LEFT JOIN `cpnl_users` tbl_added_by ON `tbl_added_by`.`usr_id` = `cpnl_enquiry`.`enq_added_by`
+WHERE `cpnl_enquiry`.`enq_se_id` =  '996'
+AND `cpnl_enquiry`.`enq_last_viewd` != 996
+AND `cpnl_enquiry`.`enq_added_by` !=  '996'
+ORDER BY `cpnl_enquiry`.`enq_id` DESC;
+SELECT cpnl_register_master.vreg_cust_name, cpnl_register_master.vreg_cust_place, cpnl_register_master.vreg_cust_phone, cpnl_register_master.vreg_customer_remark, cpnl_register_master.vreg_last_action, cpnl_register_master.vreg_added_by, cpnl_register_master.vreg_assigned_to, cpnl_register_master.vreg_inquiry, cpnl_register_master.vreg_id, cpnl_register_master.vreg_added_on, assign.usr_first_name AS assign_usr_first_name, assign.usr_last_name AS assign_usr_last_name, addedby.usr_first_name AS addedby_usr_first_name, addedby.usr_last_name AS addedby_usr_last_name, cpnl_enquiry.enq_current_status
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_users` assign ON `assign`.`usr_id` = `cpnl_register_master`.`vreg_assigned_to`
+LEFT JOIN `cpnl_users` addedby ON `addedby`.`usr_id` = `cpnl_register_master`.`vreg_added_by`
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_register_master`.`vreg_inquiry`
+WHERE `cpnl_register_master`.`vreg_status` IN (0, 1) 
+AND (cpnl_enquiry.enq_current_status NOT IN (4,6,2,5,3,7) OR cpnl_enquiry.enq_current_status IS NULL)
+AND `vreg_assigned_to` =  '996'
+AND (vreg_is_punched = 0);
+===[took:0.009]===[datetime:: 2024-10-13 22:00:10]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '996';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '996';
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '996';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '996';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_valuation`)
+WHERE (val_status = 39 OR val_status = 28 OR val_status = 13)
+AND `val_booking_status` =  0;
+SELECT COUNT(*) AS enq_total FROM cpnl_enquiry WHERE enq_current_status = 1 AND enq_se_id = 996;
+SELECT COUNT(*) AS enq_total FROM cpnl_enquiry WHERE enq_current_status = 3 AND enq_added_by = 996;
+SELECT COUNT(*) AS enq_total FROM cpnl_enquiry WHERE enq_current_status = 7 AND enq_added_by = 996;
+SELECT COUNT(*) AS enq_total FROM cpnl_enquiry WHERE (enq_se_id != enq_added_by) AND enq_se_id = 996;
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '996';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '996';
+SELECT `cpnl_followup`.`foll_id`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_customer_feedback`, `cpnl_vehicle`.`veh_id`, `cpnl_vehicle`.`veh_brand`, `cpnl_vehicle`.`veh_model`, `cpnl_vehicle`.`veh_varient`, `cpnl_vehicle`.`veh_status`, `cpnl_enquiry`.`enq_cus_name`, `cpnl_enquiry`.`enq_id`, `rana_brand`.`brd_title`, `rana_model`.`mod_title`, `cpnl_enquiry`.`enq_current_status`, `rana_variant`.`var_variant_name`, `cpnl_enquiry`.`enq_cus_status`
+FROM (`cpnl_followup`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_followup`.`foll_cus_id`
+LEFT JOIN `cpnl_vehicle` ON `cpnl_vehicle`.`veh_id` = `cpnl_followup`.`foll_cus_vehicle_id`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_vehicle`.`veh_brand`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_vehicle`.`veh_model`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_vehicle`.`veh_varient`
+WHERE `cpnl_enquiry`.`enq_se_id` = 996
+AND (DATE(cpnl_followup.foll_next_foll_date) = CURDATE() OR DATE(cpnl_followup.foll_next_foll_date) = DATE_ADD(CURDATE(), INTERVAL +1 DAY)) AND cpnl_followup.foll_customer_feedback IS NULL
+AND `cpnl_enquiry`.`enq_current_status` IN (1, 15, 14) ;
+SELECT cpnl_register_master.vreg_cust_phone, cpnl_register_master.vreg_cust_name, cpnl_register_master.vreg_next_followup, TIMESTAMPDIFF(MINUTE, "2024-10-13 22:00", cpnl_register_master.vreg_next_followup ) AS dateDiff, cpnl_register_master.vreg_id, cpnl_users.usr_first_name
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_users` ON `cpnl_register_master`.`vreg_added_by` = `cpnl_users`.`usr_id`
+WHERE `cpnl_register_master`.`vreg_status` IN (0, 1) 
+AND `cpnl_register_master`.`vreg_is_punched` =  0
+AND `cpnl_register_master`.`vreg_next_followup` IS NOT NULL
+AND `cpnl_register_master`.`vreg_assigned_to` =  '996';
+SELECT `cpnl_enquiry`.`enq_cus_name`, `cpnl_enquiry`.`enq_id`, `cpnl_enquiry`.`enq_cus_mobile`, `cpnl_users`.`usr_first_name`, `cpnl_users`.`usr_last_name`, `tbl_added_by`.`usr_username` AS enq_added_by_name
+FROM (`cpnl_enquiry`)
+LEFT JOIN `cpnl_users` ON `cpnl_users`.`usr_id` = `cpnl_enquiry`.`enq_se_id`
+LEFT JOIN `cpnl_users` tbl_added_by ON `tbl_added_by`.`usr_id` = `cpnl_enquiry`.`enq_added_by`
+WHERE `cpnl_enquiry`.`enq_se_id` =  '996'
+AND `cpnl_enquiry`.`enq_last_viewd` != 996
+AND `cpnl_enquiry`.`enq_added_by` !=  '996'
+ORDER BY `cpnl_enquiry`.`enq_id` DESC;
+SELECT cpnl_register_master.vreg_cust_name, cpnl_register_master.vreg_cust_place, cpnl_register_master.vreg_cust_phone, cpnl_register_master.vreg_customer_remark, cpnl_register_master.vreg_last_action, cpnl_register_master.vreg_added_by, cpnl_register_master.vreg_assigned_to, cpnl_register_master.vreg_inquiry, cpnl_register_master.vreg_id, cpnl_register_master.vreg_added_on, assign.usr_first_name AS assign_usr_first_name, assign.usr_last_name AS assign_usr_last_name, addedby.usr_first_name AS addedby_usr_first_name, addedby.usr_last_name AS addedby_usr_last_name, cpnl_enquiry.enq_current_status
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_users` assign ON `assign`.`usr_id` = `cpnl_register_master`.`vreg_assigned_to`
+LEFT JOIN `cpnl_users` addedby ON `addedby`.`usr_id` = `cpnl_register_master`.`vreg_added_by`
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_register_master`.`vreg_inquiry`
+WHERE `cpnl_register_master`.`vreg_status` IN (0, 1) 
+AND (cpnl_enquiry.enq_current_status NOT IN (4,6,2,5,3,7) OR cpnl_enquiry.enq_current_status IS NULL)
+AND `vreg_assigned_to` =  '996'
+AND (vreg_is_punched = 0);
+===[took:0.007]===[datetime:: 2024-10-13 22:00:13]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '996';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '996';
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '996';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '996';
+SELECT COUNT(*) AS total_no, `enq_se_id`
+FROM ((SELECT enq_id, `enq_mode_enq`, `enq_entry_date`, `enq_cus_when_buy`, `enq_showroom_id`, `enq_se_id` FROM cpnl_enquiry WHERE enq_se_id = 996 AND DATE(enq_entry_date) BETWEEN '2024-10-06' AND '2024-10-13<br>') tmp)
+WHERE `enq_se_id` =  '996';
+SELECT COUNT(*) AS total_no, `enq_mode_enq`
+FROM ((SELECT enq_id, `enq_mode_enq`, `enq_entry_date`, `enq_cus_when_buy`, `enq_showroom_id`, `enq_se_id` FROM cpnl_enquiry WHERE enq_se_id = 996 AND DATE(enq_entry_date) BETWEEN '2024-10-06' AND '2024-10-13<br>') tmp)
+GROUP BY `enq_mode_enq`;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_enquiry`)
+WHERE `cpnl_enquiry`.`enq_cus_when_buy` =  1
+AND `cpnl_enquiry`.`enq_se_id` =  '996'
+AND `cpnl_enquiry`.`enq_current_status` IN (1, 15, 14) ;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_enquiry`)
+WHERE `cpnl_enquiry`.`enq_cus_when_buy` =  2
+AND `cpnl_enquiry`.`enq_se_id` =  '996'
+AND `cpnl_enquiry`.`enq_current_status` IN (1, 15, 14) ;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_enquiry`)
+WHERE `cpnl_enquiry`.`enq_cus_when_buy` =  3
+AND `cpnl_enquiry`.`enq_se_id` =  '996'
+AND `cpnl_enquiry`.`enq_current_status` IN (1, 15, 14) ;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_enquiry`)
+WHERE `cpnl_enquiry`.`enq_cus_when_buy` =  4
+AND `cpnl_enquiry`.`enq_se_id` =  '996'
+AND `cpnl_enquiry`.`enq_current_status` IN (1, 15, 14) ;
+SELECT COUNT(*) AS mlp_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-06' AND enq_showroom_id = 1;
+SELECT COUNT(*) AS mlp_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-06' AND enq_showroom_id = 2;
+SELECT COUNT(*) AS cok_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-06' AND enq_showroom_id = 4;
+SELECT COUNT(*) AS cok_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-06' AND (enq_showroom_id = 6 OR enq_showroom_id = 7);
+SELECT COUNT(*) AS mlp_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-07' AND enq_showroom_id = 1;
+SELECT COUNT(*) AS mlp_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-07' AND enq_showroom_id = 2;
+SELECT COUNT(*) AS cok_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-07' AND enq_showroom_id = 4;
+SELECT COUNT(*) AS cok_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-07' AND (enq_showroom_id = 6 OR enq_showroom_id = 7);
+SELECT COUNT(*) AS mlp_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-08' AND enq_showroom_id = 1;
+SELECT COUNT(*) AS mlp_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-08' AND enq_showroom_id = 2;
+SELECT COUNT(*) AS cok_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-08' AND enq_showroom_id = 4;
+SELECT COUNT(*) AS cok_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-08' AND (enq_showroom_id = 6 OR enq_showroom_id = 7);
+SELECT COUNT(*) AS mlp_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-09' AND enq_showroom_id = 1;
+SELECT COUNT(*) AS mlp_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-09' AND enq_showroom_id = 2;
+SELECT COUNT(*) AS cok_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-09' AND enq_showroom_id = 4;
+SELECT COUNT(*) AS cok_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-09' AND (enq_showroom_id = 6 OR enq_showroom_id = 7);
+SELECT COUNT(*) AS mlp_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-10' AND enq_showroom_id = 1;
+SELECT COUNT(*) AS mlp_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-10' AND enq_showroom_id = 2;
+SELECT COUNT(*) AS cok_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-10' AND enq_showroom_id = 4;
+SELECT COUNT(*) AS cok_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-10' AND (enq_showroom_id = 6 OR enq_showroom_id = 7);
+SELECT COUNT(*) AS mlp_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-11' AND enq_showroom_id = 1;
+SELECT COUNT(*) AS mlp_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-11' AND enq_showroom_id = 2;
+SELECT COUNT(*) AS cok_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-11' AND enq_showroom_id = 4;
+SELECT COUNT(*) AS cok_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-11' AND (enq_showroom_id = 6 OR enq_showroom_id = 7);
+SELECT COUNT(*) AS mlp_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-12' AND enq_showroom_id = 1;
+SELECT COUNT(*) AS mlp_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-12' AND enq_showroom_id = 2;
+SELECT COUNT(*) AS cok_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-12' AND enq_showroom_id = 4;
+SELECT COUNT(*) AS cok_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-12' AND (enq_showroom_id = 6 OR enq_showroom_id = 7);
+SELECT COUNT(*) AS mlp_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-13' AND enq_showroom_id = 1;
+SELECT COUNT(*) AS mlp_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-13' AND enq_showroom_id = 2;
+SELECT COUNT(*) AS cok_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-13' AND enq_showroom_id = 4;
+SELECT COUNT(*) AS cok_count FROM cpnl_enquiry WHERE DATE(enq_entry_date) = '2024-10-13' AND (enq_showroom_id = 6 OR enq_showroom_id = 7);
+SELECT cpnl_vehicle_booking_master.vbk_id, cpnl_enquiry.enq_id, cpnl_enquiry.enq_cus_name, cpnl_enquiry.enq_cus_mobile, bkdby.usr_first_name AS bkdby_first_name, bkdby.usr_last_name AS bkdby_last_name, salesstaff.usr_first_name AS salesstaff_first_name, salesstaff.usr_last_name AS salesstaff_last_name, cpnl_valuation.val_veh_no, rana_model.mod_title, rana_brand.brd_title, rana_variant.var_variant_name, cpnl_divisions.div_name, cpnl_showroom.shr_location
+FROM (`cpnl_vehicle_booking_master`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_vehicle_booking_master`.`vbk_enq_id`
+LEFT JOIN `cpnl_users` bkdby ON `bkdby`.`usr_id` = `cpnl_vehicle_booking_master`.`vbk_added_by`
+LEFT JOIN `cpnl_users` salesstaff ON `salesstaff`.`usr_id` = `cpnl_enquiry`.`enq_se_id`
+LEFT JOIN `cpnl_valuation` ON `cpnl_valuation`.`val_id` = `cpnl_vehicle_booking_master`.`vbk_evaluation_veh_id`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_valuation`.`val_model`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_valuation`.`val_brand`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_valuation`.`val_variant`
+LEFT JOIN `cpnl_statuses` ON `cpnl_statuses`.`sts_value` = `cpnl_vehicle_booking_master`.`vbk_status`
+LEFT JOIN `cpnl_showroom` ON `cpnl_showroom`.`shr_id` = `cpnl_vehicle_booking_master`.`vbk_showroom`
+LEFT JOIN `cpnl_divisions` ON `cpnl_divisions`.`div_id` = `cpnl_showroom`.`shr_division`
+WHERE date(cpnl_vehicle_booking_master.vbk_added_on) =  '2024-10-13'
+AND `cpnl_statuses`.`sts_value` IN (13, 28, 42, 43, 40) 
+ORDER BY `vbk_added_on` desc;
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'dashboard_news';
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'dashboard_news';
+===[took:0]===[datetime:: 2024-10-13 22:00:15]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '996';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '996';
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '996';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '996';
+SELECT `cpnl_followup`.`foll_id`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_customer_feedback`, `cpnl_vehicle`.`veh_id`, `cpnl_vehicle`.`veh_brand`, `cpnl_vehicle`.`veh_model`, `cpnl_vehicle`.`veh_varient`, `cpnl_vehicle`.`veh_status`, `cpnl_enquiry`.`enq_cus_name`, `cpnl_enquiry`.`enq_id`, `rana_brand`.`brd_title`, `rana_model`.`mod_title`, `cpnl_enquiry`.`enq_current_status`, `rana_variant`.`var_variant_name`, `cpnl_enquiry`.`enq_cus_status`
+FROM (`cpnl_followup`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_followup`.`foll_cus_id`
+LEFT JOIN `cpnl_vehicle` ON `cpnl_vehicle`.`veh_id` = `cpnl_followup`.`foll_cus_vehicle_id`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_vehicle`.`veh_brand`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_vehicle`.`veh_model`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_vehicle`.`veh_varient`
+WHERE `cpnl_enquiry`.`enq_se_id` = 996
+AND (DATE(cpnl_followup.foll_next_foll_date) = CURDATE() OR DATE(cpnl_followup.foll_next_foll_date) = DATE_ADD(CURDATE(), INTERVAL +1 DAY)) AND cpnl_followup.foll_customer_feedback IS NULL
+AND `cpnl_enquiry`.`enq_current_status` IN (1, 15, 14) ;
+SELECT cpnl_register_master.vreg_cust_phone, cpnl_register_master.vreg_cust_name, cpnl_register_master.vreg_next_followup, TIMESTAMPDIFF(MINUTE, "2024-10-13 22:00", cpnl_register_master.vreg_next_followup ) AS dateDiff, cpnl_register_master.vreg_id, cpnl_users.usr_first_name
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_users` ON `cpnl_register_master`.`vreg_added_by` = `cpnl_users`.`usr_id`
+WHERE `cpnl_register_master`.`vreg_status` IN (0, 1) 
+AND `cpnl_register_master`.`vreg_is_punched` =  0
+AND `cpnl_register_master`.`vreg_next_followup` IS NOT NULL
+AND `cpnl_register_master`.`vreg_assigned_to` =  '996';
+SELECT `cpnl_enquiry`.`enq_cus_name`, `cpnl_enquiry`.`enq_id`, `cpnl_enquiry`.`enq_cus_mobile`, `cpnl_users`.`usr_first_name`, `cpnl_users`.`usr_last_name`, `tbl_added_by`.`usr_username` AS enq_added_by_name
+FROM (`cpnl_enquiry`)
+LEFT JOIN `cpnl_users` ON `cpnl_users`.`usr_id` = `cpnl_enquiry`.`enq_se_id`
+LEFT JOIN `cpnl_users` tbl_added_by ON `tbl_added_by`.`usr_id` = `cpnl_enquiry`.`enq_added_by`
+WHERE `cpnl_enquiry`.`enq_se_id` =  '996'
+AND `cpnl_enquiry`.`enq_last_viewd` != 996
+AND `cpnl_enquiry`.`enq_added_by` !=  '996'
+ORDER BY `cpnl_enquiry`.`enq_id` DESC;
+SELECT cpnl_register_master.vreg_cust_name, cpnl_register_master.vreg_cust_place, cpnl_register_master.vreg_cust_phone, cpnl_register_master.vreg_customer_remark, cpnl_register_master.vreg_last_action, cpnl_register_master.vreg_added_by, cpnl_register_master.vreg_assigned_to, cpnl_register_master.vreg_inquiry, cpnl_register_master.vreg_id, cpnl_register_master.vreg_added_on, assign.usr_first_name AS assign_usr_first_name, assign.usr_last_name AS assign_usr_last_name, addedby.usr_first_name AS addedby_usr_first_name, addedby.usr_last_name AS addedby_usr_last_name, cpnl_enquiry.enq_current_status
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_users` assign ON `assign`.`usr_id` = `cpnl_register_master`.`vreg_assigned_to`
+LEFT JOIN `cpnl_users` addedby ON `addedby`.`usr_id` = `cpnl_register_master`.`vreg_added_by`
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_register_master`.`vreg_inquiry`
+WHERE `cpnl_register_master`.`vreg_status` IN (0, 1) 
+AND (cpnl_enquiry.enq_current_status NOT IN (4,6,2,5,3,7) OR cpnl_enquiry.enq_current_status IS NULL)
+AND `vreg_assigned_to` =  '996'
+AND (vreg_is_punched = 0);
+===[took:0.007]===[datetime:: 2024-10-13 22:00:19]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '996';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '996';
+SELECT `cpnl_dar_master`.`darm_is_verified`, `cpnl_dar_master`.`darm_id`, `cpnl_dar_master`.`darm_added_on`, `cpnl_dar_master`.`darm_expec_revenue`, `cpnl_dar_master`.`darm_challenges`, `cpnl_dar_master`.`darm_pending`, `cpnl_dar_master`.`darm_remarks`, `cpnl_dar_master`.`darm_verified_team_lead_on`, `cpnl_dar_master`.`darm_verified_manager_on`, `addedby`.`usr_username` AS ab_usr_username, `verifiedbytl`.`usr_username` AS vb_usr_username_tl, `cpnl_showroom`.*, `verifiedbymg`.`usr_username` AS vb_usr_username_mg
+FROM (`cpnl_dar_master`)
+LEFT JOIN `cpnl_users` addedby ON `addedby`.`usr_id` = `cpnl_dar_master`.`darm_added_by`
+LEFT JOIN `cpnl_users` verifiedbytl ON `verifiedbytl`.`usr_id` = `cpnl_dar_master`.`darm_is_verified_team_lead`
+LEFT JOIN `cpnl_users` verifiedbymg ON `verifiedbymg`.`usr_id` = `cpnl_dar_master`.`darm_is_verified_manager`
+LEFT JOIN `cpnl_showroom` ON `cpnl_showroom`.`shr_id` = `cpnl_dar_master`.`darm_showroom`
+WHERE `cpnl_dar_master`.`darm_added_by` =  '996'
+ORDER BY `cpnl_dar_master`.`darm_added_on` DESC
+LIMIT 10;
+SELECT COUNT(*) as total
+FROM (`cpnl_dar_master`)
+WHERE `cpnl_dar_master`.`darm_added_by` =  '996';
+===[took:0.001]===[datetime:: 2024-10-13 22:00:20]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '996';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '996';
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '996';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '996';
+SELECT `cpnl_followup`.`foll_id`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_customer_feedback`, `cpnl_vehicle`.`veh_id`, `cpnl_vehicle`.`veh_brand`, `cpnl_vehicle`.`veh_model`, `cpnl_vehicle`.`veh_varient`, `cpnl_vehicle`.`veh_status`, `cpnl_enquiry`.`enq_cus_name`, `cpnl_enquiry`.`enq_id`, `rana_brand`.`brd_title`, `rana_model`.`mod_title`, `cpnl_enquiry`.`enq_current_status`, `rana_variant`.`var_variant_name`, `cpnl_enquiry`.`enq_cus_status`
+FROM (`cpnl_followup`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_followup`.`foll_cus_id`
+LEFT JOIN `cpnl_vehicle` ON `cpnl_vehicle`.`veh_id` = `cpnl_followup`.`foll_cus_vehicle_id`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_vehicle`.`veh_brand`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_vehicle`.`veh_model`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_vehicle`.`veh_varient`
+WHERE `cpnl_enquiry`.`enq_se_id` = 996
+AND (DATE(cpnl_followup.foll_next_foll_date) = CURDATE() OR DATE(cpnl_followup.foll_next_foll_date) = DATE_ADD(CURDATE(), INTERVAL +1 DAY)) AND cpnl_followup.foll_customer_feedback IS NULL
+AND `cpnl_enquiry`.`enq_current_status` IN (1, 15, 14) ;
+SELECT cpnl_register_master.vreg_cust_phone, cpnl_register_master.vreg_cust_name, cpnl_register_master.vreg_next_followup, TIMESTAMPDIFF(MINUTE, "2024-10-13 22:00", cpnl_register_master.vreg_next_followup ) AS dateDiff, cpnl_register_master.vreg_id, cpnl_users.usr_first_name
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_users` ON `cpnl_register_master`.`vreg_added_by` = `cpnl_users`.`usr_id`
+WHERE `cpnl_register_master`.`vreg_status` IN (0, 1) 
+AND `cpnl_register_master`.`vreg_is_punched` =  0
+AND `cpnl_register_master`.`vreg_next_followup` IS NOT NULL
+AND `cpnl_register_master`.`vreg_assigned_to` =  '996';
+SELECT `cpnl_enquiry`.`enq_cus_name`, `cpnl_enquiry`.`enq_id`, `cpnl_enquiry`.`enq_cus_mobile`, `cpnl_users`.`usr_first_name`, `cpnl_users`.`usr_last_name`, `tbl_added_by`.`usr_username` AS enq_added_by_name
+FROM (`cpnl_enquiry`)
+LEFT JOIN `cpnl_users` ON `cpnl_users`.`usr_id` = `cpnl_enquiry`.`enq_se_id`
+LEFT JOIN `cpnl_users` tbl_added_by ON `tbl_added_by`.`usr_id` = `cpnl_enquiry`.`enq_added_by`
+WHERE `cpnl_enquiry`.`enq_se_id` =  '996'
+AND `cpnl_enquiry`.`enq_last_viewd` != 996
+AND `cpnl_enquiry`.`enq_added_by` !=  '996'
+ORDER BY `cpnl_enquiry`.`enq_id` DESC;
+SELECT cpnl_register_master.vreg_cust_name, cpnl_register_master.vreg_cust_place, cpnl_register_master.vreg_cust_phone, cpnl_register_master.vreg_customer_remark, cpnl_register_master.vreg_last_action, cpnl_register_master.vreg_added_by, cpnl_register_master.vreg_assigned_to, cpnl_register_master.vreg_inquiry, cpnl_register_master.vreg_id, cpnl_register_master.vreg_added_on, assign.usr_first_name AS assign_usr_first_name, assign.usr_last_name AS assign_usr_last_name, addedby.usr_first_name AS addedby_usr_first_name, addedby.usr_last_name AS addedby_usr_last_name, cpnl_enquiry.enq_current_status
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_users` assign ON `assign`.`usr_id` = `cpnl_register_master`.`vreg_assigned_to`
+LEFT JOIN `cpnl_users` addedby ON `addedby`.`usr_id` = `cpnl_register_master`.`vreg_added_by`
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_register_master`.`vreg_inquiry`
+WHERE `cpnl_register_master`.`vreg_status` IN (0, 1) 
+AND (cpnl_enquiry.enq_current_status NOT IN (4,6,2,5,3,7) OR cpnl_enquiry.enq_current_status IS NULL)
+AND `vreg_assigned_to` =  '996'
+AND (vreg_is_punched = 0);
+===[took:0.006]===[datetime:: 2024-10-13 22:00:20]
+
+
+

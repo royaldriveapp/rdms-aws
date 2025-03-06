@@ -1,0 +1,1194 @@
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'voxbay_call_baseurl';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT `cpnl_callcenterbridging`.`ccb_id`, CONCAT('http://call.royaldrive.in:8080/content/incomingrecordings/',cpnl_callcenterbridging.ccb_recording_URL) AS ccb_recording_URL, `cpnl_callcenterbridging`.`ccb_callStatus`, `cpnl_callcenterbridging`.`ccb_calledNumber`, `cpnl_callcenterbridging`.`ccb_callerNumber`, `cpnl_callcenterbridging`.`ccb_AgentNumber`, `cpnl_callcenterbridging`.`ccb_authorized_person`, `cpnl_callcenterbridging`.`ccb_category`, DATE_FORMAT(cpnl_callcenterbridging.ccb_added_on, "%M %d %Y %h %i") AS ccb_added_on
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140
+ORDER BY `ccb_id` DESC
+LIMIT 100;
+===[took:0.002]===[datetime:: 2024-10-13 21:00:09]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SET time_zone = '+05:30';
+SET time_zone = '+05:30';
+SELECT usr_id AS col_id, usr_username AS col_title, cpnl_showroom.shr_location AS shr_location
+FROM (`cpnl_users`)
+LEFT JOIN `cpnl_showroom` ON `cpnl_showroom`.`shr_id` = `cpnl_users`.`usr_showroom`
+WHERE (usr_designation_new = 59 OR usr_designation_new = 43 OR usr_designation_new = 9 OR usr_designation_new = 89)
+AND `usr_active` =  1
+AND `usr_resigned` =  0
+AND `usr_showroom` =  '1'
+ORDER BY `usr_username` ASC;
+SELECT usr_id AS col_id, usr_username AS col_title, cpnl_showroom.shr_location AS shr_location
+FROM (`cpnl_users`)
+LEFT JOIN `cpnl_showroom` ON `cpnl_showroom`.`shr_id` = `cpnl_users`.`usr_showroom`
+WHERE `usr_id` =  '11006'
+ORDER BY `usr_username` ASC;
+===[took:0]===[datetime:: 2024-10-13 21:00:10]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'voxbay_call_baseurl';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT `cpnl_callcenterbridging`.`ccb_id`, CONCAT('http://call.royaldrive.in:8080/content/incomingrecordings/',cpnl_callcenterbridging.ccb_recording_URL) AS ccb_recording_URL, `cpnl_callcenterbridging`.`ccb_callStatus`, `cpnl_callcenterbridging`.`ccb_calledNumber`, `cpnl_callcenterbridging`.`ccb_callerNumber`, `cpnl_callcenterbridging`.`ccb_AgentNumber`, `cpnl_callcenterbridging`.`ccb_authorized_person`, `cpnl_callcenterbridging`.`ccb_category`, DATE_FORMAT(cpnl_callcenterbridging.ccb_added_on, "%M %d %Y %h %i") AS ccb_added_on
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140
+ORDER BY `ccb_id` DESC
+LIMIT 100;
+===[took:0.003]===[datetime:: 2024-10-13 21:01:09]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SET time_zone = '+05:30';
+SET time_zone = '+05:30';
+SELECT `rana_model`.*, `mod_id` AS col_id, `mod_title` AS col_title
+FROM (`rana_model`)
+WHERE `mod_brand` IN ('20') 
+ORDER BY `mod_title` asc;
+===[took:0.002]===[datetime:: 2024-10-13 21:01:16]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SET time_zone = '+05:30';
+SET time_zone = '+05:30';
+SELECT `rana_variant`.*, `var_id` AS col_id, `var_variant_name` AS col_title
+FROM (`rana_variant`)
+WHERE `var_model_id` IN ('332') 
+ORDER BY `var_variant_name` asc;
+===[took:0.001]===[datetime:: 2024-10-13 21:01:20]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'voxbay_call_baseurl';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT `cpnl_callcenterbridging`.`ccb_id`, CONCAT('http://call.royaldrive.in:8080/content/incomingrecordings/',cpnl_callcenterbridging.ccb_recording_URL) AS ccb_recording_URL, `cpnl_callcenterbridging`.`ccb_callStatus`, `cpnl_callcenterbridging`.`ccb_calledNumber`, `cpnl_callcenterbridging`.`ccb_callerNumber`, `cpnl_callcenterbridging`.`ccb_AgentNumber`, `cpnl_callcenterbridging`.`ccb_authorized_person`, `cpnl_callcenterbridging`.`ccb_category`, DATE_FORMAT(cpnl_callcenterbridging.ccb_added_on, "%M %d %Y %h %i") AS ccb_added_on
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140
+ORDER BY `ccb_id` DESC
+LIMIT 100;
+===[took:0.002]===[datetime:: 2024-10-13 21:02:09]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SET time_zone = '+05:30';
+SET time_zone = '+05:30';
+SELECT *
+FROM (`cpnl_showroom`)
+WHERE `shr_status` =  1;
+SELECT `cpnl_users`.*, `cpnl_users_groups`.*, `cpnl_groups`.*
+FROM (`cpnl_users`)
+JOIN `cpnl_users_groups` ON `cpnl_users_groups`.`user_id` = `cpnl_users`.`usr_id`
+JOIN `cpnl_groups` ON `cpnl_groups`.`id` = `cpnl_users_groups`.`group_id`
+WHERE `cpnl_users`.`usr_active` = 1
+ORDER BY `cpnl_users`.`usr_first_name` ASC;
+SELECT GROUP_CONCAT(usr_id) AS usr_id
+FROM (`cpnl_users`)
+WHERE `usr_tl` =  '11006';
+SELECT cpnl_register_master.*, assign.usr_first_name AS assign_usr_first_name, assign.usr_last_name AS assign_usr_last_name, addedby.usr_first_name AS addedby_usr_first_name, addedby.usr_last_name AS addedby_usr_last_name, ownedby.usr_first_name AS ownedby_usr_first_name, ownedby.usr_last_name AS ownedby_usr_last_name, cpnl_events.evnt_title, rana_brand.brd_id, rana_brand.brd_title, rana_model.mod_id, rana_model.mod_title, rana_variant.var_id, rana_variant.var_variant_name, cpnl_departments.*
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_users` assign ON `assign`.`usr_id` = `cpnl_register_master`.`vreg_assigned_to`
+LEFT JOIN `cpnl_users` addedby ON `addedby`.`usr_id` = `cpnl_register_master`.`vreg_added_by`
+LEFT JOIN `cpnl_users` ownedby ON `ownedby`.`usr_id` = `cpnl_register_master`.`vreg_first_owner`
+LEFT JOIN `cpnl_events` ON `cpnl_events`.`evnt_id` = `cpnl_register_master`.`vreg_event`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_register_master`.`vreg_brand`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_register_master`.`vreg_model`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_register_master`.`vreg_varient`
+LEFT JOIN `cpnl_departments` ON `cpnl_departments`.`dep_id` = `cpnl_register_master`.`vreg_department`
+WHERE (vreg_added_by = 11006 OR vreg_first_owner = 11006)
+AND DATE(cpnl_register_master.vreg_added_on) = DATE('2024-10-13')
+AND `cpnl_register_master`.`vreg_status` IN (0, 1) ;
+SELECT `vreg_call_type`, COUNT(*) as total
+FROM (`cpnl_register_master`)
+WHERE DATE(cpnl_register_master.vreg_first_added_on) = DATE('2024-10-13')
+AND `cpnl_register_master`.`vreg_first_owner` =  '11006'
+GROUP BY `vreg_call_type`
+ORDER BY `total` desc;
+SELECT `cpnl_register_master`.`vreg_assigned_to`, COUNT(*) as total, `cpnl_users`.`usr_username`
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_users` ON `cpnl_users`.`usr_id` = `cpnl_register_master`.`vreg_assigned_to`
+WHERE DATE(cpnl_register_master.vreg_first_added_on) = DATE('2024-10-13')
+AND `cpnl_register_master`.`vreg_first_owner` =  '11006'
+GROUP BY `vreg_assigned_to`
+ORDER BY `total` desc;
+SELECT `vreg_contact_mode`, COUNT(*) as total
+FROM (`cpnl_register_master`)
+WHERE DATE(cpnl_register_master.vreg_first_added_on) = DATE('2024-10-13')
+AND `cpnl_register_master`.`vreg_first_owner` =  '11006'
+GROUP BY `vreg_contact_mode`
+ORDER BY `total` desc;
+SELECT cpnl_departments.*, cpnl_divisions.*, parentDep.dep_name AS dep_parent_name
+FROM (`cpnl_departments`)
+LEFT JOIN `cpnl_divisions` ON `cpnl_divisions`.`div_id` = `cpnl_departments`.`dep_division`
+LEFT JOIN `cpnl_departments` parentDep ON `parentDep`.`dep_id` = `cpnl_departments`.`dep_parent`
+WHERE `cpnl_departments`.`dep_status` =  1;
+SELECT `branda`.*, `brandb`.`brd_title` AS parent
+FROM (`rana_brand` branda)
+LEFT JOIN `rana_brand` brandb ON `branda`.`brd_parent` = `brandb`.`brd_id`
+ORDER BY `branda`.`brd_title` asc;
+SELECT `rana_model`.*, `mod_id` AS col_id, `mod_title` AS col_title
+FROM (`rana_model`)
+WHERE `mod_brand` IN (0) 
+ORDER BY `mod_title` asc;
+SELECT `rana_variant`.*, `var_id` AS col_id, `var_variant_name` AS col_title
+FROM (`rana_variant`)
+WHERE `var_model_id` IN (0) 
+ORDER BY `var_variant_name` asc;
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT `cpnl_followup`.`foll_id`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_customer_feedback`, `cpnl_vehicle`.`veh_id`, `cpnl_vehicle`.`veh_brand`, `cpnl_vehicle`.`veh_model`, `cpnl_vehicle`.`veh_varient`, `cpnl_vehicle`.`veh_status`, `cpnl_enquiry`.`enq_cus_name`, `cpnl_enquiry`.`enq_id`, `rana_brand`.`brd_title`, `rana_model`.`mod_title`, `cpnl_enquiry`.`enq_current_status`, `rana_variant`.`var_variant_name`, `cpnl_enquiry`.`enq_cus_status`
+FROM (`cpnl_followup`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_followup`.`foll_cus_id`
+LEFT JOIN `cpnl_vehicle` ON `cpnl_vehicle`.`veh_id` = `cpnl_followup`.`foll_cus_vehicle_id`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_vehicle`.`veh_brand`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_vehicle`.`veh_model`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_vehicle`.`veh_varient`
+WHERE `cpnl_followup`.`foll_added_by` = 11006
+AND (enq_cus_when_buy = 1 OR enq_cus_when_buy = 2 OR enq_cus_when_buy = 3)
+AND (DATE(cpnl_followup.foll_next_foll_date) = CURDATE() OR DATE(cpnl_followup.foll_next_foll_date) = DATE_ADD(CURDATE(), INTERVAL +1 DAY)) AND cpnl_followup.foll_customer_feedback IS NULL
+AND `cpnl_enquiry`.`enq_current_status` IN (1, 15, 14) ;
+===[took:0.017]===[datetime:: 2024-10-13 21:02:16]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SET time_zone = '+05:30';
+SET time_zone = '+05:30';
+SELECT *
+FROM (`cpnl_showroom`)
+WHERE `shr_status` =  1;
+SELECT `cpnl_users`.*, `cpnl_users_groups`.*, `cpnl_groups`.*
+FROM (`cpnl_users`)
+JOIN `cpnl_users_groups` ON `cpnl_users_groups`.`user_id` = `cpnl_users`.`usr_id`
+JOIN `cpnl_groups` ON `cpnl_groups`.`id` = `cpnl_users_groups`.`group_id`
+WHERE `cpnl_users`.`usr_active` = 1
+ORDER BY `cpnl_users`.`usr_first_name` ASC;
+SELECT GROUP_CONCAT(usr_id) AS usr_id
+FROM (`cpnl_users`)
+WHERE `usr_tl` =  '11006';
+SELECT cpnl_register_master.*, assign.usr_first_name AS assign_usr_first_name, assign.usr_last_name AS assign_usr_last_name, addedby.usr_first_name AS addedby_usr_first_name, addedby.usr_last_name AS addedby_usr_last_name, ownedby.usr_first_name AS ownedby_usr_first_name, ownedby.usr_last_name AS ownedby_usr_last_name, cpnl_events.evnt_title, rana_brand.brd_id, rana_brand.brd_title, rana_model.mod_id, rana_model.mod_title, rana_variant.var_id, rana_variant.var_variant_name, cpnl_departments.*
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_users` assign ON `assign`.`usr_id` = `cpnl_register_master`.`vreg_assigned_to`
+LEFT JOIN `cpnl_users` addedby ON `addedby`.`usr_id` = `cpnl_register_master`.`vreg_added_by`
+LEFT JOIN `cpnl_users` ownedby ON `ownedby`.`usr_id` = `cpnl_register_master`.`vreg_first_owner`
+LEFT JOIN `cpnl_events` ON `cpnl_events`.`evnt_id` = `cpnl_register_master`.`vreg_event`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_register_master`.`vreg_brand`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_register_master`.`vreg_model`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_register_master`.`vreg_varient`
+LEFT JOIN `cpnl_departments` ON `cpnl_departments`.`dep_id` = `cpnl_register_master`.`vreg_department`
+WHERE (vreg_added_by = 11006 OR vreg_first_owner = 11006)
+AND DATE(cpnl_register_master.vreg_added_on) = DATE('2024-10-13')
+AND `cpnl_register_master`.`vreg_status` IN (0, 1) ;
+SELECT `vreg_call_type`, COUNT(*) as total
+FROM (`cpnl_register_master`)
+WHERE DATE(cpnl_register_master.vreg_first_added_on) = DATE('2024-10-13')
+AND `cpnl_register_master`.`vreg_first_owner` =  '11006'
+GROUP BY `vreg_call_type`
+ORDER BY `total` desc;
+SELECT `cpnl_register_master`.`vreg_assigned_to`, COUNT(*) as total, `cpnl_users`.`usr_username`
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_users` ON `cpnl_users`.`usr_id` = `cpnl_register_master`.`vreg_assigned_to`
+WHERE DATE(cpnl_register_master.vreg_first_added_on) = DATE('2024-10-13')
+AND `cpnl_register_master`.`vreg_first_owner` =  '11006'
+GROUP BY `vreg_assigned_to`
+ORDER BY `total` desc;
+SELECT `vreg_contact_mode`, COUNT(*) as total
+FROM (`cpnl_register_master`)
+WHERE DATE(cpnl_register_master.vreg_first_added_on) = DATE('2024-10-13')
+AND `cpnl_register_master`.`vreg_first_owner` =  '11006'
+GROUP BY `vreg_contact_mode`
+ORDER BY `total` desc;
+SELECT cpnl_departments.*, cpnl_divisions.*, parentDep.dep_name AS dep_parent_name
+FROM (`cpnl_departments`)
+LEFT JOIN `cpnl_divisions` ON `cpnl_divisions`.`div_id` = `cpnl_departments`.`dep_division`
+LEFT JOIN `cpnl_departments` parentDep ON `parentDep`.`dep_id` = `cpnl_departments`.`dep_parent`
+WHERE `cpnl_departments`.`dep_status` =  1;
+SELECT `branda`.*, `brandb`.`brd_title` AS parent
+FROM (`rana_brand` branda)
+LEFT JOIN `rana_brand` brandb ON `branda`.`brd_parent` = `brandb`.`brd_id`
+ORDER BY `branda`.`brd_title` asc;
+SELECT `rana_model`.*, `mod_id` AS col_id, `mod_title` AS col_title
+FROM (`rana_model`)
+WHERE `mod_brand` IN (0) 
+ORDER BY `mod_title` asc;
+SELECT `rana_variant`.*, `var_id` AS col_id, `var_variant_name` AS col_title
+FROM (`rana_variant`)
+WHERE `var_model_id` IN (0) 
+ORDER BY `var_variant_name` asc;
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT `cpnl_followup`.`foll_id`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_customer_feedback`, `cpnl_vehicle`.`veh_id`, `cpnl_vehicle`.`veh_brand`, `cpnl_vehicle`.`veh_model`, `cpnl_vehicle`.`veh_varient`, `cpnl_vehicle`.`veh_status`, `cpnl_enquiry`.`enq_cus_name`, `cpnl_enquiry`.`enq_id`, `rana_brand`.`brd_title`, `rana_model`.`mod_title`, `cpnl_enquiry`.`enq_current_status`, `rana_variant`.`var_variant_name`, `cpnl_enquiry`.`enq_cus_status`
+FROM (`cpnl_followup`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_followup`.`foll_cus_id`
+LEFT JOIN `cpnl_vehicle` ON `cpnl_vehicle`.`veh_id` = `cpnl_followup`.`foll_cus_vehicle_id`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_vehicle`.`veh_brand`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_vehicle`.`veh_model`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_vehicle`.`veh_varient`
+WHERE `cpnl_followup`.`foll_added_by` = 11006
+AND (enq_cus_when_buy = 1 OR enq_cus_when_buy = 2 OR enq_cus_when_buy = 3)
+AND (DATE(cpnl_followup.foll_next_foll_date) = CURDATE() OR DATE(cpnl_followup.foll_next_foll_date) = DATE_ADD(CURDATE(), INTERVAL +1 DAY)) AND cpnl_followup.foll_customer_feedback IS NULL
+AND `cpnl_enquiry`.`enq_current_status` IN (1, 15, 14) ;
+===[took:0.016]===[datetime:: 2024-10-13 21:02:17]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT `cpnl_dar_master`.`darm_is_verified`, `cpnl_dar_master`.`darm_id`, `cpnl_dar_master`.`darm_added_on`, `cpnl_dar_master`.`darm_expec_revenue`, `cpnl_dar_master`.`darm_challenges`, `cpnl_dar_master`.`darm_pending`, `cpnl_dar_master`.`darm_remarks`, `cpnl_dar_master`.`darm_verified_team_lead_on`, `cpnl_dar_master`.`darm_verified_manager_on`, `addedby`.`usr_username` AS ab_usr_username, `verifiedbytl`.`usr_username` AS vb_usr_username_tl, `cpnl_showroom`.*, `verifiedbymg`.`usr_username` AS vb_usr_username_mg
+FROM (`cpnl_dar_master`)
+LEFT JOIN `cpnl_users` addedby ON `addedby`.`usr_id` = `cpnl_dar_master`.`darm_added_by`
+LEFT JOIN `cpnl_users` verifiedbytl ON `verifiedbytl`.`usr_id` = `cpnl_dar_master`.`darm_is_verified_team_lead`
+LEFT JOIN `cpnl_users` verifiedbymg ON `verifiedbymg`.`usr_id` = `cpnl_dar_master`.`darm_is_verified_manager`
+LEFT JOIN `cpnl_showroom` ON `cpnl_showroom`.`shr_id` = `cpnl_dar_master`.`darm_showroom`
+WHERE DATE(cpnl_dar_master.darm_added_on) =  '2024-10-13'
+AND `cpnl_dar_master`.`darm_added_by` = 11006
+ORDER BY `cpnl_dar_master`.`darm_added_on` DESC;
+SET time_zone = '+05:30';
+SELECT `cpnl_enquiry`.*, `cpnl_users`.*, `cpnl_showroom`.*, `cpnl_contact_mode`.*
+FROM (`cpnl_enquiry`)
+LEFT JOIN `cpnl_users` ON `cpnl_users`.`usr_id` = `cpnl_enquiry`.`enq_se_id`
+LEFT JOIN `cpnl_showroom` ON `cpnl_showroom`.`shr_id` = `cpnl_enquiry`.`enq_showroom_id`
+LEFT JOIN `cpnl_contact_mode` ON `cpnl_contact_mode`.`cmd_mod_id` = `cpnl_enquiry`.`enq_mode_enq`
+WHERE `cpnl_enquiry`.`enq_id` NOT IN (SELECT dare_enq FROM cpnl_dar_enquiry)
+AND `cpnl_enquiry`.`enq_se_id` =  '11006'
+AND  `cpnl_enquiry`.`enq_added_on`  LIKE '%2024-10-13%'
+ORDER BY `cpnl_enquiry`.`enq_entry_date` DESC;
+SELECT `enq_mode_enq`, COUNT(enq_mode_enq) enq_mode_enq_count, `cpnl_contact_mode`.`cmd_title`
+FROM (`cpnl_enquiry`)
+JOIN `cpnl_contact_mode` ON `cpnl_contact_mode`.`cmd_mod_id` = `cpnl_enquiry`.`enq_mode_enq`
+WHERE DATE(cpnl_enquiry.enq_added_on) = DATE('2024-10-13')
+AND `cpnl_enquiry`.`enq_id` NOT IN (SELECT dare_enq FROM cpnl_dar_enquiry)
+AND `cpnl_enquiry`.`enq_se_id` =  '11006'
+GROUP BY `enq_mode_enq`;
+SELECT `enq_cus_status`, COUNT(enq_cus_status) enq_cus_status_count
+FROM (`cpnl_enquiry`)
+WHERE DATE(cpnl_enquiry.enq_added_on) = DATE('2024-10-13')
+AND `cpnl_enquiry`.`enq_id` NOT IN (SELECT dare_enq FROM cpnl_dar_enquiry)
+AND `cpnl_enquiry`.`enq_se_id` =  '11006'
+GROUP BY `enq_cus_status`;
+SELECT `enq_cus_when_buy`, COUNT(enq_cus_when_buy) enq_cus_when_buy_count
+FROM (`cpnl_enquiry`)
+WHERE DATE(cpnl_enquiry.enq_added_on) = DATE('2024-10-13')
+AND `cpnl_enquiry`.`enq_id` NOT IN (SELECT dare_enq FROM cpnl_dar_enquiry)
+AND `cpnl_enquiry`.`enq_se_id` =  '11006'
+GROUP BY `enq_cus_when_buy`;
+SELECT `cpnl_followup`.*, `cpnl_enquiry`.*, `rana_model`.*, `rana_brand`.*, `rana_variant`.*, `cpnl_enquiry`.*, `cpnl_vehicle`.*
+FROM (`cpnl_followup`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_followup`.`foll_cus_id`
+LEFT JOIN `cpnl_vehicle` ON `cpnl_vehicle`.`veh_id` = `cpnl_followup`.`foll_cus_vehicle_id`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_vehicle`.`veh_model`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_vehicle`.`veh_brand`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_vehicle`.`veh_varient`
+WHERE (cpnl_followup.foll_added_by = 11006 OR cpnl_followup.foll_updated_by = 11006)
+AND (DATE(cpnl_followup.foll_entry_date) = DATE('2024-10-13') OR DATE(cpnl_followup.foll_customer_feedback_added_date) = DATE('2024-10-13')) AND cpnl_followup.foll_customer_feedback IS NOT NULL;
+SELECT cpnl_register_master.vreg_id, cpnl_register_master.vreg_cust_name, cpnl_register_master.vreg_cust_phone, cpnl_register_master.vreg_inquiry, cpnl_register_master.vreg_cust_place, cpnl_register_master.vreg_contact_mode, cpnl_register_master.vreg_customer_remark, cpnl_contact_mode.*, rana_brand.*, rana_variant.*, rana_model.*
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_contact_mode` ON `cpnl_contact_mode`.`cmd_mod_id` = `cpnl_register_master`.`vreg_contact_mode`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_register_master`.`vreg_model`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_register_master`.`vreg_brand`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_register_master`.`vreg_varient`
+WHERE `vreg_first_owner` =  '11006'
+AND  `cpnl_register_master`.`vreg_added_on`  LIKE '%2024-10-13%';
+SELECT `cpnl_register_followup`.*, `cpnl_register_master`.*, `cpnl_contact_mode`.*, `rana_brand`.*, `rana_variant`.*, `rana_model`.*
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_register_followup` ON `cpnl_register_followup`.`regf_reg_id` = `cpnl_register_master`.`vreg_id`
+LEFT JOIN `cpnl_contact_mode` ON `cpnl_contact_mode`.`cmd_mod_id` = `cpnl_register_master`.`vreg_contact_mode`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_register_master`.`vreg_model`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_register_master`.`vreg_brand`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_register_master`.`vreg_varient`
+WHERE `cpnl_register_followup`.`regf_added_by` =  '11006'
+AND DATE(cpnl_register_followup.regf_added_on) = DATE('2024-10-13');
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT `cpnl_followup`.`foll_id`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_customer_feedback`, `cpnl_vehicle`.`veh_id`, `cpnl_vehicle`.`veh_brand`, `cpnl_vehicle`.`veh_model`, `cpnl_vehicle`.`veh_varient`, `cpnl_vehicle`.`veh_status`, `cpnl_enquiry`.`enq_cus_name`, `cpnl_enquiry`.`enq_id`, `rana_brand`.`brd_title`, `rana_model`.`mod_title`, `cpnl_enquiry`.`enq_current_status`, `rana_variant`.`var_variant_name`, `cpnl_enquiry`.`enq_cus_status`
+FROM (`cpnl_followup`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_followup`.`foll_cus_id`
+LEFT JOIN `cpnl_vehicle` ON `cpnl_vehicle`.`veh_id` = `cpnl_followup`.`foll_cus_vehicle_id`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_vehicle`.`veh_brand`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_vehicle`.`veh_model`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_vehicle`.`veh_varient`
+WHERE `cpnl_followup`.`foll_added_by` = 11006
+AND (enq_cus_when_buy = 1 OR enq_cus_when_buy = 2 OR enq_cus_when_buy = 3)
+AND (DATE(cpnl_followup.foll_next_foll_date) = CURDATE() OR DATE(cpnl_followup.foll_next_foll_date) = DATE_ADD(CURDATE(), INTERVAL +1 DAY)) AND cpnl_followup.foll_customer_feedback IS NULL
+AND `cpnl_enquiry`.`enq_current_status` IN (1, 15, 14) ;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99350;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99349;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99352;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99353;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 1457;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 16878;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99351;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 88176;
+===[took:0.029]===[datetime:: 2024-10-13 21:02:21]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT `cpnl_dar_master`.`darm_is_verified`, `cpnl_dar_master`.`darm_id`, `cpnl_dar_master`.`darm_added_on`, `cpnl_dar_master`.`darm_expec_revenue`, `cpnl_dar_master`.`darm_challenges`, `cpnl_dar_master`.`darm_pending`, `cpnl_dar_master`.`darm_remarks`, `cpnl_dar_master`.`darm_verified_team_lead_on`, `cpnl_dar_master`.`darm_verified_manager_on`, `addedby`.`usr_username` AS ab_usr_username, `verifiedbytl`.`usr_username` AS vb_usr_username_tl, `cpnl_showroom`.*, `verifiedbymg`.`usr_username` AS vb_usr_username_mg
+FROM (`cpnl_dar_master`)
+LEFT JOIN `cpnl_users` addedby ON `addedby`.`usr_id` = `cpnl_dar_master`.`darm_added_by`
+LEFT JOIN `cpnl_users` verifiedbytl ON `verifiedbytl`.`usr_id` = `cpnl_dar_master`.`darm_is_verified_team_lead`
+LEFT JOIN `cpnl_users` verifiedbymg ON `verifiedbymg`.`usr_id` = `cpnl_dar_master`.`darm_is_verified_manager`
+LEFT JOIN `cpnl_showroom` ON `cpnl_showroom`.`shr_id` = `cpnl_dar_master`.`darm_showroom`
+WHERE DATE(cpnl_dar_master.darm_added_on) =  '2024-10-13'
+AND `cpnl_dar_master`.`darm_added_by` = 11006
+ORDER BY `cpnl_dar_master`.`darm_added_on` DESC;
+SET time_zone = '+05:30';
+SELECT `cpnl_enquiry`.*, `cpnl_users`.*, `cpnl_showroom`.*, `cpnl_contact_mode`.*
+FROM (`cpnl_enquiry`)
+LEFT JOIN `cpnl_users` ON `cpnl_users`.`usr_id` = `cpnl_enquiry`.`enq_se_id`
+LEFT JOIN `cpnl_showroom` ON `cpnl_showroom`.`shr_id` = `cpnl_enquiry`.`enq_showroom_id`
+LEFT JOIN `cpnl_contact_mode` ON `cpnl_contact_mode`.`cmd_mod_id` = `cpnl_enquiry`.`enq_mode_enq`
+WHERE `cpnl_enquiry`.`enq_id` NOT IN (SELECT dare_enq FROM cpnl_dar_enquiry)
+AND `cpnl_enquiry`.`enq_se_id` =  '11006'
+AND  `cpnl_enquiry`.`enq_added_on`  LIKE '%2024-10-13%'
+ORDER BY `cpnl_enquiry`.`enq_entry_date` DESC;
+SELECT `enq_mode_enq`, COUNT(enq_mode_enq) enq_mode_enq_count, `cpnl_contact_mode`.`cmd_title`
+FROM (`cpnl_enquiry`)
+JOIN `cpnl_contact_mode` ON `cpnl_contact_mode`.`cmd_mod_id` = `cpnl_enquiry`.`enq_mode_enq`
+WHERE DATE(cpnl_enquiry.enq_added_on) = DATE('2024-10-13')
+AND `cpnl_enquiry`.`enq_id` NOT IN (SELECT dare_enq FROM cpnl_dar_enquiry)
+AND `cpnl_enquiry`.`enq_se_id` =  '11006'
+GROUP BY `enq_mode_enq`;
+SELECT `enq_cus_status`, COUNT(enq_cus_status) enq_cus_status_count
+FROM (`cpnl_enquiry`)
+WHERE DATE(cpnl_enquiry.enq_added_on) = DATE('2024-10-13')
+AND `cpnl_enquiry`.`enq_id` NOT IN (SELECT dare_enq FROM cpnl_dar_enquiry)
+AND `cpnl_enquiry`.`enq_se_id` =  '11006'
+GROUP BY `enq_cus_status`;
+SELECT `enq_cus_when_buy`, COUNT(enq_cus_when_buy) enq_cus_when_buy_count
+FROM (`cpnl_enquiry`)
+WHERE DATE(cpnl_enquiry.enq_added_on) = DATE('2024-10-13')
+AND `cpnl_enquiry`.`enq_id` NOT IN (SELECT dare_enq FROM cpnl_dar_enquiry)
+AND `cpnl_enquiry`.`enq_se_id` =  '11006'
+GROUP BY `enq_cus_when_buy`;
+SELECT `cpnl_followup`.*, `cpnl_enquiry`.*, `rana_model`.*, `rana_brand`.*, `rana_variant`.*, `cpnl_enquiry`.*, `cpnl_vehicle`.*
+FROM (`cpnl_followup`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_followup`.`foll_cus_id`
+LEFT JOIN `cpnl_vehicle` ON `cpnl_vehicle`.`veh_id` = `cpnl_followup`.`foll_cus_vehicle_id`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_vehicle`.`veh_model`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_vehicle`.`veh_brand`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_vehicle`.`veh_varient`
+WHERE (cpnl_followup.foll_added_by = 11006 OR cpnl_followup.foll_updated_by = 11006)
+AND (DATE(cpnl_followup.foll_entry_date) = DATE('2024-10-13') OR DATE(cpnl_followup.foll_customer_feedback_added_date) = DATE('2024-10-13')) AND cpnl_followup.foll_customer_feedback IS NOT NULL;
+SELECT cpnl_register_master.vreg_id, cpnl_register_master.vreg_cust_name, cpnl_register_master.vreg_cust_phone, cpnl_register_master.vreg_inquiry, cpnl_register_master.vreg_cust_place, cpnl_register_master.vreg_contact_mode, cpnl_register_master.vreg_customer_remark, cpnl_contact_mode.*, rana_brand.*, rana_variant.*, rana_model.*
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_contact_mode` ON `cpnl_contact_mode`.`cmd_mod_id` = `cpnl_register_master`.`vreg_contact_mode`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_register_master`.`vreg_model`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_register_master`.`vreg_brand`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_register_master`.`vreg_varient`
+WHERE `vreg_first_owner` =  '11006'
+AND  `cpnl_register_master`.`vreg_added_on`  LIKE '%2024-10-13%';
+SELECT `cpnl_register_followup`.*, `cpnl_register_master`.*, `cpnl_contact_mode`.*, `rana_brand`.*, `rana_variant`.*, `rana_model`.*
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_register_followup` ON `cpnl_register_followup`.`regf_reg_id` = `cpnl_register_master`.`vreg_id`
+LEFT JOIN `cpnl_contact_mode` ON `cpnl_contact_mode`.`cmd_mod_id` = `cpnl_register_master`.`vreg_contact_mode`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_register_master`.`vreg_model`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_register_master`.`vreg_brand`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_register_master`.`vreg_varient`
+WHERE `cpnl_register_followup`.`regf_added_by` =  '11006'
+AND DATE(cpnl_register_followup.regf_added_on) = DATE('2024-10-13');
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT `cpnl_followup`.`foll_id`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_customer_feedback`, `cpnl_vehicle`.`veh_id`, `cpnl_vehicle`.`veh_brand`, `cpnl_vehicle`.`veh_model`, `cpnl_vehicle`.`veh_varient`, `cpnl_vehicle`.`veh_status`, `cpnl_enquiry`.`enq_cus_name`, `cpnl_enquiry`.`enq_id`, `rana_brand`.`brd_title`, `rana_model`.`mod_title`, `cpnl_enquiry`.`enq_current_status`, `rana_variant`.`var_variant_name`, `cpnl_enquiry`.`enq_cus_status`
+FROM (`cpnl_followup`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_followup`.`foll_cus_id`
+LEFT JOIN `cpnl_vehicle` ON `cpnl_vehicle`.`veh_id` = `cpnl_followup`.`foll_cus_vehicle_id`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_vehicle`.`veh_brand`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_vehicle`.`veh_model`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_vehicle`.`veh_varient`
+WHERE `cpnl_followup`.`foll_added_by` = 11006
+AND (enq_cus_when_buy = 1 OR enq_cus_when_buy = 2 OR enq_cus_when_buy = 3)
+AND (DATE(cpnl_followup.foll_next_foll_date) = CURDATE() OR DATE(cpnl_followup.foll_next_foll_date) = DATE_ADD(CURDATE(), INTERVAL +1 DAY)) AND cpnl_followup.foll_customer_feedback IS NULL
+AND `cpnl_enquiry`.`enq_current_status` IN (1, 15, 14) ;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99350;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99349;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99352;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99353;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 1457;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 16878;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99351;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 88176;
+===[took:0.02]===[datetime:: 2024-10-13 21:02:22]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'voxbay_call_baseurl';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT `cpnl_callcenterbridging`.`ccb_id`, CONCAT('http://call.royaldrive.in:8080/content/incomingrecordings/',cpnl_callcenterbridging.ccb_recording_URL) AS ccb_recording_URL, `cpnl_callcenterbridging`.`ccb_callStatus`, `cpnl_callcenterbridging`.`ccb_calledNumber`, `cpnl_callcenterbridging`.`ccb_callerNumber`, `cpnl_callcenterbridging`.`ccb_AgentNumber`, `cpnl_callcenterbridging`.`ccb_authorized_person`, `cpnl_callcenterbridging`.`ccb_category`, DATE_FORMAT(cpnl_callcenterbridging.ccb_added_on, "%M %d %Y %h %i") AS ccb_added_on
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140
+ORDER BY `ccb_id` DESC
+LIMIT 100;
+===[took:0.002]===[datetime:: 2024-10-13 21:03:10]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT `cpnl_dar_master`.`darm_is_verified`, `cpnl_dar_master`.`darm_id`, `cpnl_dar_master`.`darm_added_on`, `cpnl_dar_master`.`darm_expec_revenue`, `cpnl_dar_master`.`darm_challenges`, `cpnl_dar_master`.`darm_pending`, `cpnl_dar_master`.`darm_remarks`, `cpnl_dar_master`.`darm_verified_team_lead_on`, `cpnl_dar_master`.`darm_verified_manager_on`, `addedby`.`usr_username` AS ab_usr_username, `verifiedbytl`.`usr_username` AS vb_usr_username_tl, `cpnl_showroom`.*, `verifiedbymg`.`usr_username` AS vb_usr_username_mg
+FROM (`cpnl_dar_master`)
+LEFT JOIN `cpnl_users` addedby ON `addedby`.`usr_id` = `cpnl_dar_master`.`darm_added_by`
+LEFT JOIN `cpnl_users` verifiedbytl ON `verifiedbytl`.`usr_id` = `cpnl_dar_master`.`darm_is_verified_team_lead`
+LEFT JOIN `cpnl_users` verifiedbymg ON `verifiedbymg`.`usr_id` = `cpnl_dar_master`.`darm_is_verified_manager`
+LEFT JOIN `cpnl_showroom` ON `cpnl_showroom`.`shr_id` = `cpnl_dar_master`.`darm_showroom`
+WHERE DATE(cpnl_dar_master.darm_added_on) =  '2024-10-13'
+AND `cpnl_dar_master`.`darm_added_by` = 11006
+ORDER BY `cpnl_dar_master`.`darm_added_on` DESC;
+SET time_zone = '+05:30';
+SELECT `cpnl_enquiry`.*, `cpnl_users`.*, `cpnl_showroom`.*, `cpnl_contact_mode`.*
+FROM (`cpnl_enquiry`)
+LEFT JOIN `cpnl_users` ON `cpnl_users`.`usr_id` = `cpnl_enquiry`.`enq_se_id`
+LEFT JOIN `cpnl_showroom` ON `cpnl_showroom`.`shr_id` = `cpnl_enquiry`.`enq_showroom_id`
+LEFT JOIN `cpnl_contact_mode` ON `cpnl_contact_mode`.`cmd_mod_id` = `cpnl_enquiry`.`enq_mode_enq`
+WHERE `cpnl_enquiry`.`enq_id` NOT IN (SELECT dare_enq FROM cpnl_dar_enquiry)
+AND `cpnl_enquiry`.`enq_se_id` =  '11006'
+AND  `cpnl_enquiry`.`enq_added_on`  LIKE '%2024-10-13%'
+ORDER BY `cpnl_enquiry`.`enq_entry_date` DESC;
+SELECT `enq_mode_enq`, COUNT(enq_mode_enq) enq_mode_enq_count, `cpnl_contact_mode`.`cmd_title`
+FROM (`cpnl_enquiry`)
+JOIN `cpnl_contact_mode` ON `cpnl_contact_mode`.`cmd_mod_id` = `cpnl_enquiry`.`enq_mode_enq`
+WHERE DATE(cpnl_enquiry.enq_added_on) = DATE('2024-10-13')
+AND `cpnl_enquiry`.`enq_id` NOT IN (SELECT dare_enq FROM cpnl_dar_enquiry)
+AND `cpnl_enquiry`.`enq_se_id` =  '11006'
+GROUP BY `enq_mode_enq`;
+SELECT `enq_cus_status`, COUNT(enq_cus_status) enq_cus_status_count
+FROM (`cpnl_enquiry`)
+WHERE DATE(cpnl_enquiry.enq_added_on) = DATE('2024-10-13')
+AND `cpnl_enquiry`.`enq_id` NOT IN (SELECT dare_enq FROM cpnl_dar_enquiry)
+AND `cpnl_enquiry`.`enq_se_id` =  '11006'
+GROUP BY `enq_cus_status`;
+SELECT `enq_cus_when_buy`, COUNT(enq_cus_when_buy) enq_cus_when_buy_count
+FROM (`cpnl_enquiry`)
+WHERE DATE(cpnl_enquiry.enq_added_on) = DATE('2024-10-13')
+AND `cpnl_enquiry`.`enq_id` NOT IN (SELECT dare_enq FROM cpnl_dar_enquiry)
+AND `cpnl_enquiry`.`enq_se_id` =  '11006'
+GROUP BY `enq_cus_when_buy`;
+SELECT `cpnl_followup`.*, `cpnl_enquiry`.*, `rana_model`.*, `rana_brand`.*, `rana_variant`.*, `cpnl_enquiry`.*, `cpnl_vehicle`.*
+FROM (`cpnl_followup`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_followup`.`foll_cus_id`
+LEFT JOIN `cpnl_vehicle` ON `cpnl_vehicle`.`veh_id` = `cpnl_followup`.`foll_cus_vehicle_id`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_vehicle`.`veh_model`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_vehicle`.`veh_brand`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_vehicle`.`veh_varient`
+WHERE (cpnl_followup.foll_added_by = 11006 OR cpnl_followup.foll_updated_by = 11006)
+AND (DATE(cpnl_followup.foll_entry_date) = DATE('2024-10-13') OR DATE(cpnl_followup.foll_customer_feedback_added_date) = DATE('2024-10-13')) AND cpnl_followup.foll_customer_feedback IS NOT NULL;
+SELECT cpnl_register_master.vreg_id, cpnl_register_master.vreg_cust_name, cpnl_register_master.vreg_cust_phone, cpnl_register_master.vreg_inquiry, cpnl_register_master.vreg_cust_place, cpnl_register_master.vreg_contact_mode, cpnl_register_master.vreg_customer_remark, cpnl_contact_mode.*, rana_brand.*, rana_variant.*, rana_model.*
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_contact_mode` ON `cpnl_contact_mode`.`cmd_mod_id` = `cpnl_register_master`.`vreg_contact_mode`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_register_master`.`vreg_model`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_register_master`.`vreg_brand`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_register_master`.`vreg_varient`
+WHERE `vreg_first_owner` =  '11006'
+AND  `cpnl_register_master`.`vreg_added_on`  LIKE '%2024-10-13%';
+SELECT `cpnl_register_followup`.*, `cpnl_register_master`.*, `cpnl_contact_mode`.*, `rana_brand`.*, `rana_variant`.*, `rana_model`.*
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_register_followup` ON `cpnl_register_followup`.`regf_reg_id` = `cpnl_register_master`.`vreg_id`
+LEFT JOIN `cpnl_contact_mode` ON `cpnl_contact_mode`.`cmd_mod_id` = `cpnl_register_master`.`vreg_contact_mode`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_register_master`.`vreg_model`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_register_master`.`vreg_brand`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_register_master`.`vreg_varient`
+WHERE `cpnl_register_followup`.`regf_added_by` =  '11006'
+AND DATE(cpnl_register_followup.regf_added_on) = DATE('2024-10-13');
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT `cpnl_followup`.`foll_id`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_customer_feedback`, `cpnl_vehicle`.`veh_id`, `cpnl_vehicle`.`veh_brand`, `cpnl_vehicle`.`veh_model`, `cpnl_vehicle`.`veh_varient`, `cpnl_vehicle`.`veh_status`, `cpnl_enquiry`.`enq_cus_name`, `cpnl_enquiry`.`enq_id`, `rana_brand`.`brd_title`, `rana_model`.`mod_title`, `cpnl_enquiry`.`enq_current_status`, `rana_variant`.`var_variant_name`, `cpnl_enquiry`.`enq_cus_status`
+FROM (`cpnl_followup`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_followup`.`foll_cus_id`
+LEFT JOIN `cpnl_vehicle` ON `cpnl_vehicle`.`veh_id` = `cpnl_followup`.`foll_cus_vehicle_id`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_vehicle`.`veh_brand`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_vehicle`.`veh_model`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_vehicle`.`veh_varient`
+WHERE `cpnl_followup`.`foll_added_by` = 11006
+AND (enq_cus_when_buy = 1 OR enq_cus_when_buy = 2 OR enq_cus_when_buy = 3)
+AND (DATE(cpnl_followup.foll_next_foll_date) = CURDATE() OR DATE(cpnl_followup.foll_next_foll_date) = DATE_ADD(CURDATE(), INTERVAL +1 DAY)) AND cpnl_followup.foll_customer_feedback IS NULL
+AND `cpnl_enquiry`.`enq_current_status` IN (1, 15, 14) ;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99350;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99349;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99352;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99353;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 1457;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 16878;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99351;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 88176;
+===[took:0.031]===[datetime:: 2024-10-13 21:04:00]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT `cpnl_dar_master`.`darm_is_verified`, `cpnl_dar_master`.`darm_id`, `cpnl_dar_master`.`darm_added_on`, `cpnl_dar_master`.`darm_expec_revenue`, `cpnl_dar_master`.`darm_challenges`, `cpnl_dar_master`.`darm_pending`, `cpnl_dar_master`.`darm_remarks`, `cpnl_dar_master`.`darm_verified_team_lead_on`, `cpnl_dar_master`.`darm_verified_manager_on`, `addedby`.`usr_username` AS ab_usr_username, `verifiedbytl`.`usr_username` AS vb_usr_username_tl, `cpnl_showroom`.*, `verifiedbymg`.`usr_username` AS vb_usr_username_mg
+FROM (`cpnl_dar_master`)
+LEFT JOIN `cpnl_users` addedby ON `addedby`.`usr_id` = `cpnl_dar_master`.`darm_added_by`
+LEFT JOIN `cpnl_users` verifiedbytl ON `verifiedbytl`.`usr_id` = `cpnl_dar_master`.`darm_is_verified_team_lead`
+LEFT JOIN `cpnl_users` verifiedbymg ON `verifiedbymg`.`usr_id` = `cpnl_dar_master`.`darm_is_verified_manager`
+LEFT JOIN `cpnl_showroom` ON `cpnl_showroom`.`shr_id` = `cpnl_dar_master`.`darm_showroom`
+WHERE DATE(cpnl_dar_master.darm_added_on) =  '2024-10-13'
+AND `cpnl_dar_master`.`darm_added_by` = 11006
+ORDER BY `cpnl_dar_master`.`darm_added_on` DESC;
+SET time_zone = '+05:30';
+SELECT `cpnl_enquiry`.*, `cpnl_users`.*, `cpnl_showroom`.*, `cpnl_contact_mode`.*
+FROM (`cpnl_enquiry`)
+LEFT JOIN `cpnl_users` ON `cpnl_users`.`usr_id` = `cpnl_enquiry`.`enq_se_id`
+LEFT JOIN `cpnl_showroom` ON `cpnl_showroom`.`shr_id` = `cpnl_enquiry`.`enq_showroom_id`
+LEFT JOIN `cpnl_contact_mode` ON `cpnl_contact_mode`.`cmd_mod_id` = `cpnl_enquiry`.`enq_mode_enq`
+WHERE `cpnl_enquiry`.`enq_id` NOT IN (SELECT dare_enq FROM cpnl_dar_enquiry)
+AND `cpnl_enquiry`.`enq_se_id` =  '11006'
+AND  `cpnl_enquiry`.`enq_added_on`  LIKE '%2024-10-13%'
+ORDER BY `cpnl_enquiry`.`enq_entry_date` DESC;
+SELECT `enq_mode_enq`, COUNT(enq_mode_enq) enq_mode_enq_count, `cpnl_contact_mode`.`cmd_title`
+FROM (`cpnl_enquiry`)
+JOIN `cpnl_contact_mode` ON `cpnl_contact_mode`.`cmd_mod_id` = `cpnl_enquiry`.`enq_mode_enq`
+WHERE DATE(cpnl_enquiry.enq_added_on) = DATE('2024-10-13')
+AND `cpnl_enquiry`.`enq_id` NOT IN (SELECT dare_enq FROM cpnl_dar_enquiry)
+AND `cpnl_enquiry`.`enq_se_id` =  '11006'
+GROUP BY `enq_mode_enq`;
+SELECT `enq_cus_status`, COUNT(enq_cus_status) enq_cus_status_count
+FROM (`cpnl_enquiry`)
+WHERE DATE(cpnl_enquiry.enq_added_on) = DATE('2024-10-13')
+AND `cpnl_enquiry`.`enq_id` NOT IN (SELECT dare_enq FROM cpnl_dar_enquiry)
+AND `cpnl_enquiry`.`enq_se_id` =  '11006'
+GROUP BY `enq_cus_status`;
+SELECT `enq_cus_when_buy`, COUNT(enq_cus_when_buy) enq_cus_when_buy_count
+FROM (`cpnl_enquiry`)
+WHERE DATE(cpnl_enquiry.enq_added_on) = DATE('2024-10-13')
+AND `cpnl_enquiry`.`enq_id` NOT IN (SELECT dare_enq FROM cpnl_dar_enquiry)
+AND `cpnl_enquiry`.`enq_se_id` =  '11006'
+GROUP BY `enq_cus_when_buy`;
+SELECT `cpnl_followup`.*, `cpnl_enquiry`.*, `rana_model`.*, `rana_brand`.*, `rana_variant`.*, `cpnl_enquiry`.*, `cpnl_vehicle`.*
+FROM (`cpnl_followup`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_followup`.`foll_cus_id`
+LEFT JOIN `cpnl_vehicle` ON `cpnl_vehicle`.`veh_id` = `cpnl_followup`.`foll_cus_vehicle_id`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_vehicle`.`veh_model`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_vehicle`.`veh_brand`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_vehicle`.`veh_varient`
+WHERE (cpnl_followup.foll_added_by = 11006 OR cpnl_followup.foll_updated_by = 11006)
+AND (DATE(cpnl_followup.foll_entry_date) = DATE('2024-10-13') OR DATE(cpnl_followup.foll_customer_feedback_added_date) = DATE('2024-10-13')) AND cpnl_followup.foll_customer_feedback IS NOT NULL;
+SELECT cpnl_register_master.vreg_id, cpnl_register_master.vreg_cust_name, cpnl_register_master.vreg_cust_phone, cpnl_register_master.vreg_inquiry, cpnl_register_master.vreg_cust_place, cpnl_register_master.vreg_contact_mode, cpnl_register_master.vreg_customer_remark, cpnl_contact_mode.*, rana_brand.*, rana_variant.*, rana_model.*
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_contact_mode` ON `cpnl_contact_mode`.`cmd_mod_id` = `cpnl_register_master`.`vreg_contact_mode`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_register_master`.`vreg_model`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_register_master`.`vreg_brand`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_register_master`.`vreg_varient`
+WHERE `vreg_first_owner` =  '11006'
+AND  `cpnl_register_master`.`vreg_added_on`  LIKE '%2024-10-13%';
+SELECT `cpnl_register_followup`.*, `cpnl_register_master`.*, `cpnl_contact_mode`.*, `rana_brand`.*, `rana_variant`.*, `rana_model`.*
+FROM (`cpnl_register_master`)
+LEFT JOIN `cpnl_register_followup` ON `cpnl_register_followup`.`regf_reg_id` = `cpnl_register_master`.`vreg_id`
+LEFT JOIN `cpnl_contact_mode` ON `cpnl_contact_mode`.`cmd_mod_id` = `cpnl_register_master`.`vreg_contact_mode`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_register_master`.`vreg_model`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_register_master`.`vreg_brand`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_register_master`.`vreg_varient`
+WHERE `cpnl_register_followup`.`regf_added_by` =  '11006'
+AND DATE(cpnl_register_followup.regf_added_on) = DATE('2024-10-13');
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT `cpnl_followup`.`foll_id`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_customer_feedback`, `cpnl_vehicle`.`veh_id`, `cpnl_vehicle`.`veh_brand`, `cpnl_vehicle`.`veh_model`, `cpnl_vehicle`.`veh_varient`, `cpnl_vehicle`.`veh_status`, `cpnl_enquiry`.`enq_cus_name`, `cpnl_enquiry`.`enq_id`, `rana_brand`.`brd_title`, `rana_model`.`mod_title`, `cpnl_enquiry`.`enq_current_status`, `rana_variant`.`var_variant_name`, `cpnl_enquiry`.`enq_cus_status`
+FROM (`cpnl_followup`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_followup`.`foll_cus_id`
+LEFT JOIN `cpnl_vehicle` ON `cpnl_vehicle`.`veh_id` = `cpnl_followup`.`foll_cus_vehicle_id`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_vehicle`.`veh_brand`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_vehicle`.`veh_model`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_vehicle`.`veh_varient`
+WHERE `cpnl_followup`.`foll_added_by` = 11006
+AND (enq_cus_when_buy = 1 OR enq_cus_when_buy = 2 OR enq_cus_when_buy = 3)
+AND (DATE(cpnl_followup.foll_next_foll_date) = CURDATE() OR DATE(cpnl_followup.foll_next_foll_date) = DATE_ADD(CURDATE(), INTERVAL +1 DAY)) AND cpnl_followup.foll_customer_feedback IS NULL
+AND `cpnl_enquiry`.`enq_current_status` IN (1, 15, 14) ;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99350;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99349;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99352;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99353;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 1457;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 16878;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 99351;
+SELECT GROUP_CONCAT( IF(cpnl_vehicle.veh_brand=0, '', rana_brand.brd_title) , IF(cpnl_vehicle.veh_model=0, '', rana_model.mod_title) , IF(cpnl_vehicle.veh_varient=0, '', rana_variant.var_variant_name)) AS vehicle FROM cpnl_vehicle LEFT JOIN rana_brand ON rana_brand.brd_id = cpnl_vehicle.veh_brand LEFT JOIN rana_model ON rana_model.mod_id = cpnl_vehicle.veh_model LEFT JOIN rana_variant ON rana_variant.var_id = cpnl_vehicle.veh_varient WHERE cpnl_vehicle.veh_enq_id = 88176;
+===[took:0.021]===[datetime:: 2024-10-13 21:04:02]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'voxbay_call_baseurl';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT `cpnl_callcenterbridging`.`ccb_id`, CONCAT('http://call.royaldrive.in:8080/content/incomingrecordings/',cpnl_callcenterbridging.ccb_recording_URL) AS ccb_recording_URL, `cpnl_callcenterbridging`.`ccb_callStatus`, `cpnl_callcenterbridging`.`ccb_calledNumber`, `cpnl_callcenterbridging`.`ccb_callerNumber`, `cpnl_callcenterbridging`.`ccb_AgentNumber`, `cpnl_callcenterbridging`.`ccb_authorized_person`, `cpnl_callcenterbridging`.`ccb_category`, DATE_FORMAT(cpnl_callcenterbridging.ccb_added_on, "%M %d %Y %h %i") AS ccb_added_on
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140
+ORDER BY `ccb_id` DESC
+LIMIT 100;
+===[took:0.002]===[datetime:: 2024-10-13 21:04:10]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'voxbay_call_baseurl';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT `cpnl_callcenterbridging`.`ccb_id`, CONCAT('http://call.royaldrive.in:8080/content/incomingrecordings/',cpnl_callcenterbridging.ccb_recording_URL) AS ccb_recording_URL, `cpnl_callcenterbridging`.`ccb_callStatus`, `cpnl_callcenterbridging`.`ccb_calledNumber`, `cpnl_callcenterbridging`.`ccb_callerNumber`, `cpnl_callcenterbridging`.`ccb_AgentNumber`, `cpnl_callcenterbridging`.`ccb_authorized_person`, `cpnl_callcenterbridging`.`ccb_category`, DATE_FORMAT(cpnl_callcenterbridging.ccb_added_on, "%M %d %Y %h %i") AS ccb_added_on
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140
+ORDER BY `ccb_id` DESC
+LIMIT 100;
+===[took:0.002]===[datetime:: 2024-10-13 21:05:09]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'voxbay_call_baseurl';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT `cpnl_callcenterbridging`.`ccb_id`, CONCAT('http://call.royaldrive.in:8080/content/incomingrecordings/',cpnl_callcenterbridging.ccb_recording_URL) AS ccb_recording_URL, `cpnl_callcenterbridging`.`ccb_callStatus`, `cpnl_callcenterbridging`.`ccb_calledNumber`, `cpnl_callcenterbridging`.`ccb_callerNumber`, `cpnl_callcenterbridging`.`ccb_AgentNumber`, `cpnl_callcenterbridging`.`ccb_authorized_person`, `cpnl_callcenterbridging`.`ccb_category`, DATE_FORMAT(cpnl_callcenterbridging.ccb_added_on, "%M %d %Y %h %i") AS ccb_added_on
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140
+ORDER BY `ccb_id` DESC
+LIMIT 100;
+===[took:0.002]===[datetime:: 2024-10-13 21:06:10]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'voxbay_call_baseurl';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT `cpnl_callcenterbridging`.`ccb_id`, CONCAT('http://call.royaldrive.in:8080/content/incomingrecordings/',cpnl_callcenterbridging.ccb_recording_URL) AS ccb_recording_URL, `cpnl_callcenterbridging`.`ccb_callStatus`, `cpnl_callcenterbridging`.`ccb_calledNumber`, `cpnl_callcenterbridging`.`ccb_callerNumber`, `cpnl_callcenterbridging`.`ccb_AgentNumber`, `cpnl_callcenterbridging`.`ccb_authorized_person`, `cpnl_callcenterbridging`.`ccb_category`, DATE_FORMAT(cpnl_callcenterbridging.ccb_added_on, "%M %d %Y %h %i") AS ccb_added_on
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140
+ORDER BY `ccb_id` DESC
+LIMIT 100;
+===[took:0.002]===[datetime:: 2024-10-13 21:07:10]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'voxbay_call_baseurl';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT `cpnl_callcenterbridging`.`ccb_id`, CONCAT('http://call.royaldrive.in:8080/content/incomingrecordings/',cpnl_callcenterbridging.ccb_recording_URL) AS ccb_recording_URL, `cpnl_callcenterbridging`.`ccb_callStatus`, `cpnl_callcenterbridging`.`ccb_calledNumber`, `cpnl_callcenterbridging`.`ccb_callerNumber`, `cpnl_callcenterbridging`.`ccb_AgentNumber`, `cpnl_callcenterbridging`.`ccb_authorized_person`, `cpnl_callcenterbridging`.`ccb_category`, DATE_FORMAT(cpnl_callcenterbridging.ccb_added_on, "%M %d %Y %h %i") AS ccb_added_on
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140
+ORDER BY `ccb_id` DESC
+LIMIT 100;
+===[took:0.002]===[datetime:: 2024-10-13 21:08:10]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'voxbay_call_baseurl';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT `cpnl_callcenterbridging`.`ccb_id`, CONCAT('http://call.royaldrive.in:8080/content/incomingrecordings/',cpnl_callcenterbridging.ccb_recording_URL) AS ccb_recording_URL, `cpnl_callcenterbridging`.`ccb_callStatus`, `cpnl_callcenterbridging`.`ccb_calledNumber`, `cpnl_callcenterbridging`.`ccb_callerNumber`, `cpnl_callcenterbridging`.`ccb_AgentNumber`, `cpnl_callcenterbridging`.`ccb_authorized_person`, `cpnl_callcenterbridging`.`ccb_category`, DATE_FORMAT(cpnl_callcenterbridging.ccb_added_on, "%M %d %Y %h %i") AS ccb_added_on
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140
+ORDER BY `ccb_id` DESC
+LIMIT 100;
+===[took:0.002]===[datetime:: 2024-10-13 21:09:10]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'voxbay_call_baseurl';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT `cpnl_callcenterbridging`.`ccb_id`, CONCAT('http://call.royaldrive.in:8080/content/incomingrecordings/',cpnl_callcenterbridging.ccb_recording_URL) AS ccb_recording_URL, `cpnl_callcenterbridging`.`ccb_callStatus`, `cpnl_callcenterbridging`.`ccb_calledNumber`, `cpnl_callcenterbridging`.`ccb_callerNumber`, `cpnl_callcenterbridging`.`ccb_AgentNumber`, `cpnl_callcenterbridging`.`ccb_authorized_person`, `cpnl_callcenterbridging`.`ccb_category`, DATE_FORMAT(cpnl_callcenterbridging.ccb_added_on, "%M %d %Y %h %i") AS ccb_added_on
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140
+ORDER BY `ccb_id` DESC
+LIMIT 100;
+===[took:0.002]===[datetime:: 2024-10-13 21:10:10]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'voxbay_call_baseurl';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT `cpnl_callcenterbridging`.`ccb_id`, CONCAT('http://call.royaldrive.in:8080/content/incomingrecordings/',cpnl_callcenterbridging.ccb_recording_URL) AS ccb_recording_URL, `cpnl_callcenterbridging`.`ccb_callStatus`, `cpnl_callcenterbridging`.`ccb_calledNumber`, `cpnl_callcenterbridging`.`ccb_callerNumber`, `cpnl_callcenterbridging`.`ccb_AgentNumber`, `cpnl_callcenterbridging`.`ccb_authorized_person`, `cpnl_callcenterbridging`.`ccb_category`, DATE_FORMAT(cpnl_callcenterbridging.ccb_added_on, "%M %d %Y %h %i") AS ccb_added_on
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140
+ORDER BY `ccb_id` DESC
+LIMIT 100;
+===[took:0.002]===[datetime:: 2024-10-13 21:11:09]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'voxbay_call_baseurl';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT `cpnl_callcenterbridging`.`ccb_id`, CONCAT('http://call.royaldrive.in:8080/content/incomingrecordings/',cpnl_callcenterbridging.ccb_recording_URL) AS ccb_recording_URL, `cpnl_callcenterbridging`.`ccb_callStatus`, `cpnl_callcenterbridging`.`ccb_calledNumber`, `cpnl_callcenterbridging`.`ccb_callerNumber`, `cpnl_callcenterbridging`.`ccb_AgentNumber`, `cpnl_callcenterbridging`.`ccb_authorized_person`, `cpnl_callcenterbridging`.`ccb_category`, DATE_FORMAT(cpnl_callcenterbridging.ccb_added_on, "%M %d %Y %h %i") AS ccb_added_on
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140
+ORDER BY `ccb_id` DESC
+LIMIT 100;
+===[took:0.002]===[datetime:: 2024-10-13 21:12:10]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'voxbay_call_baseurl';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT `cpnl_callcenterbridging`.`ccb_id`, CONCAT('http://call.royaldrive.in:8080/content/incomingrecordings/',cpnl_callcenterbridging.ccb_recording_URL) AS ccb_recording_URL, `cpnl_callcenterbridging`.`ccb_callStatus`, `cpnl_callcenterbridging`.`ccb_calledNumber`, `cpnl_callcenterbridging`.`ccb_callerNumber`, `cpnl_callcenterbridging`.`ccb_AgentNumber`, `cpnl_callcenterbridging`.`ccb_authorized_person`, `cpnl_callcenterbridging`.`ccb_category`, DATE_FORMAT(cpnl_callcenterbridging.ccb_added_on, "%M %d %Y %h %i") AS ccb_added_on
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140
+ORDER BY `ccb_id` DESC
+LIMIT 100;
+===[took:0.002]===[datetime:: 2024-10-13 21:13:09]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT *
+FROM (`cpnl_settings`)
+WHERE `set_key` =  'voxbay_call_baseurl';
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT COUNT(*) AS `numrows`
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140;
+SELECT `cpnl_callcenterbridging`.`ccb_id`, CONCAT('http://call.royaldrive.in:8080/content/incomingrecordings/',cpnl_callcenterbridging.ccb_recording_URL) AS ccb_recording_URL, `cpnl_callcenterbridging`.`ccb_callStatus`, `cpnl_callcenterbridging`.`ccb_calledNumber`, `cpnl_callcenterbridging`.`ccb_callerNumber`, `cpnl_callcenterbridging`.`ccb_AgentNumber`, `cpnl_callcenterbridging`.`ccb_authorized_person`, `cpnl_callcenterbridging`.`ccb_category`, DATE_FORMAT(cpnl_callcenterbridging.ccb_added_on, "%M %d %Y %h %i") AS ccb_added_on
+FROM (`cpnl_callcenterbridging`)
+WHERE `ccb_can_show` =  1
+AND `ccb_category` NOT IN (2) 
+AND `ccb_calledNumber` != 914843109140
+ORDER BY `ccb_id` DESC
+LIMIT 100;
+===[took:0.002]===[datetime:: 2024-10-13 21:14:10]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT `cpnl_followup`.`foll_id`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_customer_feedback`, `cpnl_vehicle`.`veh_id`, `cpnl_vehicle`.`veh_brand`, `cpnl_vehicle`.`veh_model`, `cpnl_vehicle`.`veh_varient`, `cpnl_vehicle`.`veh_status`, `cpnl_enquiry`.`enq_cus_name`, `cpnl_enquiry`.`enq_id`, `rana_brand`.`brd_title`, `rana_model`.`mod_title`, `cpnl_enquiry`.`enq_current_status`, `rana_variant`.`var_variant_name`, `cpnl_enquiry`.`enq_cus_status`
+FROM (`cpnl_followup`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_followup`.`foll_cus_id`
+LEFT JOIN `cpnl_vehicle` ON `cpnl_vehicle`.`veh_id` = `cpnl_followup`.`foll_cus_vehicle_id`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_vehicle`.`veh_brand`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_vehicle`.`veh_model`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_vehicle`.`veh_varient`
+WHERE `cpnl_followup`.`foll_added_by` = 11006
+AND (enq_cus_when_buy = 1 OR enq_cus_when_buy = 2 OR enq_cus_when_buy = 3)
+AND (DATE(cpnl_followup.foll_next_foll_date) = CURDATE() OR DATE(cpnl_followup.foll_next_foll_date) = DATE_ADD(CURDATE(), INTERVAL +1 DAY)) AND cpnl_followup.foll_customer_feedback IS NULL
+AND `cpnl_enquiry`.`enq_current_status` IN (1, 15, 14) ;
+===[took:0.023]===[datetime:: 2024-10-13 21:14:36]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT `cpnl_dar_master`.`darm_is_verified`, `cpnl_dar_master`.`darm_id`, `cpnl_dar_master`.`darm_added_on`, `cpnl_dar_master`.`darm_expec_revenue`, `cpnl_dar_master`.`darm_challenges`, `cpnl_dar_master`.`darm_pending`, `cpnl_dar_master`.`darm_remarks`, `cpnl_dar_master`.`darm_verified_team_lead_on`, `cpnl_dar_master`.`darm_verified_manager_on`, `addedby`.`usr_username` AS ab_usr_username, `verifiedbytl`.`usr_username` AS vb_usr_username_tl, `cpnl_showroom`.*, `verifiedbymg`.`usr_username` AS vb_usr_username_mg
+FROM (`cpnl_dar_master`)
+LEFT JOIN `cpnl_users` addedby ON `addedby`.`usr_id` = `cpnl_dar_master`.`darm_added_by`
+LEFT JOIN `cpnl_users` verifiedbytl ON `verifiedbytl`.`usr_id` = `cpnl_dar_master`.`darm_is_verified_team_lead`
+LEFT JOIN `cpnl_users` verifiedbymg ON `verifiedbymg`.`usr_id` = `cpnl_dar_master`.`darm_is_verified_manager`
+LEFT JOIN `cpnl_showroom` ON `cpnl_showroom`.`shr_id` = `cpnl_dar_master`.`darm_showroom`
+WHERE `cpnl_dar_master`.`darm_added_by` =  '11006'
+ORDER BY `cpnl_dar_master`.`darm_added_on` DESC
+LIMIT 10;
+SELECT COUNT(*) as total
+FROM (`cpnl_dar_master`)
+WHERE `cpnl_dar_master`.`darm_added_by` =  '11006';
+===[took:0]===[datetime:: 2024-10-13 21:14:36]
+
+
+
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT `cpnl_users`.*
+FROM (`cpnl_users`)
+WHERE `usr_id` =  '11006';
+SELECT `cpnl_users_groups`.*, `cpnl_user_access`.*
+FROM (`cpnl_users_groups`)
+LEFT JOIN `cpnl_user_access` ON `cpnl_user_access`.`cua_user_id` = `cpnl_users_groups`.`user_id`
+WHERE `cpnl_users_groups`.`user_id` =  '11006';
+SELECT `cpnl_followup`.`foll_id`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_next_foll_date`, `cpnl_followup`.`foll_customer_feedback`, `cpnl_vehicle`.`veh_id`, `cpnl_vehicle`.`veh_brand`, `cpnl_vehicle`.`veh_model`, `cpnl_vehicle`.`veh_varient`, `cpnl_vehicle`.`veh_status`, `cpnl_enquiry`.`enq_cus_name`, `cpnl_enquiry`.`enq_id`, `rana_brand`.`brd_title`, `rana_model`.`mod_title`, `cpnl_enquiry`.`enq_current_status`, `rana_variant`.`var_variant_name`, `cpnl_enquiry`.`enq_cus_status`
+FROM (`cpnl_followup`)
+LEFT JOIN `cpnl_enquiry` ON `cpnl_enquiry`.`enq_id` = `cpnl_followup`.`foll_cus_id`
+LEFT JOIN `cpnl_vehicle` ON `cpnl_vehicle`.`veh_id` = `cpnl_followup`.`foll_cus_vehicle_id`
+LEFT JOIN `rana_brand` ON `rana_brand`.`brd_id` = `cpnl_vehicle`.`veh_brand`
+LEFT JOIN `rana_model` ON `rana_model`.`mod_id` = `cpnl_vehicle`.`veh_model`
+LEFT JOIN `rana_variant` ON `rana_variant`.`var_id` = `cpnl_vehicle`.`veh_varient`
+WHERE `cpnl_followup`.`foll_added_by` = 11006
+AND (enq_cus_when_buy = 1 OR enq_cus_when_buy = 2 OR enq_cus_when_buy = 3)
+AND (DATE(cpnl_followup.foll_next_foll_date) = CURDATE() OR DATE(cpnl_followup.foll_next_foll_date) = DATE_ADD(CURDATE(), INTERVAL +1 DAY)) AND cpnl_followup.foll_customer_feedback IS NULL
+AND `cpnl_enquiry`.`enq_current_status` IN (1, 15, 14) ;
+===[took:0.014]===[datetime:: 2024-10-13 21:14:37]
+
+
+
